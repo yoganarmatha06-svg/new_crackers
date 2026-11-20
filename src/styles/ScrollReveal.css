@@ -1,0 +1,148 @@
+/* ==========================================================
+   SCROLL REVEAL SIDE SLIDE ANIMATION STYLES
+   Triggered via IntersectionObserver with .is-visible class
+   ========================================================== */
+
+/* Prevent horizontal scrollbars and viewport scaling during entrance translations */
+.welcome-intro-section {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* ==========================================================
+   INITIAL (HIDDEN) STATE - Before entering viewport
+   ========================================================== */
+
+/* 1. Left Side: New Crackers Logo */
+.welcome-intro-section .welcome-flame-badge {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: all 1s ease-out;
+  will-change: transform, opacity;
+}
+
+/* 2. Right Side: Content Elements */
+.welcome-intro-section .welcome-pretitle {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 1s ease-out;
+  will-change: transform, opacity;
+}
+
+.welcome-intro-section .welcome-brand-name {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 1s ease-out;
+  will-change: transform, opacity;
+}
+
+.welcome-intro-section .welcome-description {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 1s ease-out;
+  will-change: transform, opacity;
+}
+
+.welcome-intro-section .welcome-explore-btn {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 1s ease-out;
+  will-change: transform, opacity;
+}
+
+/* ==========================================================
+   VISIBLE (ANIMATED) STATE - Triggered by .is-visible class
+   ========================================================== */
+
+/* 1. Logo slides in from LEFT */
+.welcome-intro-section.is-visible .welcome-flame-badge {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+
+/* 2. Content elements slide individually from RIGHT with staggered delays */
+.welcome-intro-section.is-visible .welcome-pretitle {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.15s;
+}
+
+.welcome-intro-section.is-visible .welcome-brand-name {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.welcome-intro-section.is-visible .welcome-description {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.45s;
+}
+
+.welcome-intro-section.is-visible .welcome-explore-btn {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.6s;
+}
+
+/* ==========================================================
+   INTERACTIVE HOVER STATES (Active when visible)
+   ========================================================== */
+.welcome-intro-section.is-visible .welcome-flame-badge:hover {
+  transform: translateX(0) scale(1.04) rotate(-1.5deg);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.welcome-intro-section.is-visible .welcome-explore-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(234, 88, 12, 0.5);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.welcome-intro-section.is-visible .welcome-explore-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET)
+   Smaller slide distances (40px–60px) to prevent screen edge overflow
+   ========================================================== */
+@media (max-width: 768px) {
+  .welcome-intro-section .welcome-flame-badge {
+    transform: translateX(-60px);
+  }
+
+  .welcome-intro-section .welcome-pretitle,
+  .welcome-intro-section .welcome-brand-name,
+  .welcome-intro-section .welcome-description,
+  .welcome-intro-section .welcome-explore-btn {
+    transform: translateX(60px);
+  }
+
+  .welcome-intro-section.is-visible .welcome-flame-badge,
+  .welcome-intro-section.is-visible .welcome-pretitle,
+  .welcome-intro-section.is-visible .welcome-brand-name,
+  .welcome-intro-section.is-visible .welcome-description,
+  .welcome-intro-section.is-visible .welcome-explore-btn {
+    transform: translateX(0);
+  }
+}
+
+/* ==========================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-intro-section .welcome-flame-badge,
+  .welcome-intro-section .welcome-pretitle,
+  .welcome-intro-section .welcome-brand-name,
+  .welcome-intro-section .welcome-description,
+  .welcome-intro-section .welcome-explore-btn {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,178 @@
+/* ==========================================================
+   FESTIVAL BANNER STYLES (Royal Purple & Shimmering Gold Theme)
+   ========================================================== */
+
+.festival-banner-section {
+  padding: 40px 0 60px 0;
+}
+
+.festival-banner-card {
+  position: relative;
+  min-height: 400px;
+  border: 2.5px solid #ffd700;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 215, 0, 0.35);
+  display: flex;
+  align-items: center;
+}
+
+/* Gold Stripes at top & bottom of the banner */
+.festival-banner-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--stripe-gold);
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.festival-banner-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--stripe-gold);
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* Background image with Purple & Gold overlay */
+.banner-bg-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-full-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.banner-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(27, 7, 52, 0.96) 0%,
+    rgba(43, 11, 79, 0.88) 45%,
+    rgba(27, 7, 52, 0.45) 80%,
+    rgba(18, 4, 36, 0.75) 100%
+  );
+}
+
+/* Banner Content */
+.banner-content {
+  position: relative;
+  z-index: 5;
+  padding: 50px 48px;
+  max-width: 650px;
+}
+
+.banner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--grad-gold);
+  color: #2e1065;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+  box-shadow: 0 0 14px rgba(255, 215, 0, 0.45);
+}
+
+.banner-flame {
+  animation: pulseGlow 1.5s infinite;
+  color: #2e1065;
+}
+
+.banner-heading {
+  font-size: 2.7rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-text {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 2px 10px rgba(255, 215, 0, 0.5));
+}
+
+.banner-subtext {
+  font-size: 1.05rem;
+  color: #fef08a;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.banner-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.perk-icon {
+  color: var(--color-gold-bright);
+}
+
+.banner-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.banner-btn {
+  padding: 13px 28px;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+  .festival-banner-card {
+    min-height: 480px;
+  }
+  .banner-gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(27, 7, 52, 0.95) 0%,
+      rgba(38, 9, 71, 0.92) 100%
+    );
+  }
+  .banner-content {
+    padding: 36px 24px;
+    max-width: 100%;
+  }
+  .banner-heading {
+    font-size: 2.1rem;
+  }
+}

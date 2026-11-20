@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a0ca3" />
+      <stop offset="60%" stop-color="#480ca8" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff006e" />
+      <stop offset="100%" stop-color="#ffbe0b" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="250.0" r="120"/>
+    <circle cx="300.0" cy="250.0" r="180"/>
+    <circle cx="300.0" cy="250.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <defs><filter id="rktglow"><feGaussianBlur stdDeviation="5"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs>
+            <g transform="translate(300.0, 250.0) rotate(-35)">
+                <!-- Bamboo stick -->
+                <line x1="0" y1="20" x2="0" y2="180" stroke="#d97706" stroke-width="5" stroke-linecap="round"/>
+                <!-- Rocket body -->
+                <rect x="-18" y="-70" width="36" height="90" rx="4" fill="#dc2626" stroke="#facc15" stroke-width="3"/>
+                <!-- Nose cone -->
+                <polygon points="0,-120 -22,-70 22,-70" fill="#facc15" stroke="#ea580c" stroke-width="2"/>
+                <!-- Fuse / Thrust -->
+                <path d="M-10,20 Q-20,70 0,100 Q20,70 10,20 Z" fill="#ffedd5" opacity="0.85"/>
+                <path d="M-6,20 Q0,80 6,20 Z" fill="#f97316"/>
+                <text x="0" y="-20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle" transform="rotate(90, 0, -20)">BOMB</text>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 455)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Classic Sky Rocket Bomb (10 Pcs)</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#ff006e" text-anchor="middle">Rockets</text>
+  </g>
+  
+</svg>

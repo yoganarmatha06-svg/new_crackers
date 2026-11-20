@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06281e" />
+      <stop offset="60%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="200.0" r="120"/>
+    <circle cx="300.0" cy="200.0" r="180"/>
+    <circle cx="300.0" cy="200.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <g transform="translate(300.0, 200.0)">
+                <circle cx="0" cy="0" r="90" fill="#065f46" stroke="#34d399" stroke-width="5"/>
+                <!-- Leaf / Eco Shield -->
+                <path d="M0,-50 C30,-30 45,10 0,60 C-45,10 -30,-30 0,-50 Z" fill="#10b981"/>
+                <path d="M0,-50 L0,55" stroke="#ffffff" stroke-width="3"/>
+                <text x="0" y="15" font-family="Arial, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">100% GREEN</text>
+                <text x="0" y="32" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ecfdf5" text-anchor="middle">CRACKERS</text>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 355)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">SAFETY CERTIFIED</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#34d399" text-anchor="middle">100% CSIR-NEERI Approved Green Crackers</text>
+  </g>
+  
+</svg>

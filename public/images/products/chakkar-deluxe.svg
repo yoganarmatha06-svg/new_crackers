@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b1947" />
+      <stop offset="60%" stop-color="#3b1e7a" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9f1c" />
+      <stop offset="100%" stop-color="#ff4081" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="250.0" r="120"/>
+    <circle cx="300.0" cy="250.0" r="180"/>
+    <circle cx="300.0" cy="250.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <defs>
+                <filter id="chkglow"><feGaussianBlur stdDeviation="5" result="b"/><feComposite in="SourceGraphic" in2="b" operator="over"/></filter>
+            </defs>
+            <g transform="translate(300.0, 250.0)">
+                <!-- Circular spin trail -->
+                <circle cx="0" cy="0" r="100" fill="none" stroke="#f59e0b" stroke-width="4" stroke-dasharray="25,10" opacity="0.8" filter="url(#chkglow)"/>
+                <circle cx="0" cy="0" r="75" fill="none" stroke="#ef4444" stroke-width="5" stroke-dasharray="35,15" opacity="0.9" filter="url(#chkglow)"/>
+                <circle cx="0" cy="0" r="50" fill="none" stroke="#38bdf8" stroke-width="4" stroke-dasharray="20,10" opacity="0.8" filter="url(#chkglow)"/>
+                <!-- Chakkar body -->
+                <circle cx="0" cy="0" r="32" fill="#d97706" stroke="#fbbf24" stroke-width="3"/>
+                <circle cx="0" cy="0" r="10" fill="#ef4444"/>
+                <!-- Whirling spokes/sparks -->
+                <path d="M0,0 Q33.0,22.6 115.0,0.0" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q7.4,39.3 81.3,81.3" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q-22.6,33.0 0.0,115.0" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q-39.3,7.4 -81.3,81.3" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q-33.0,-22.6 -115.0,0.0" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q-7.4,-39.3 -81.3,-81.3" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q22.6,-33.0 -0.0,-115.0" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/><path d="M0,0 Q39.3,-7.4 81.3,-81.3" fill="none" stroke="#fef08a" stroke-width="3.5" filter="url(#chkglow)"/>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 455)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Deluxe Ground Chakkar (10 Pcs)</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#ff9f1c" text-anchor="middle">Ground Chakkars</text>
+  </g>
+  
+</svg>

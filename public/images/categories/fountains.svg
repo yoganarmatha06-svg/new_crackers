@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b0938" />
+      <stop offset="60%" stop-color="#5c0e61" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4cc9f0" />
+      <stop offset="100%" stop-color="#f72585" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="450" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="225.0" r="120"/>
+    <circle cx="300.0" cy="225.0" r="180"/>
+    <circle cx="300.0" cy="225.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <defs><filter id="ftnglow"><feGaussianBlur stdDeviation="4"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs>
+            <g transform="translate(300.0, 324.0)">
+                <!-- Eruption -->
+                <path d="M0,-40 Q-110,-140 -160,-230" fill="none" stroke="#38bdf8" stroke-width="3.5" filter="url(#ftnglow)"/><path d="M0,-40 Q-66,-140 -96,-230" fill="none" stroke="#c084fc" stroke-width="3.5" filter="url(#ftnglow)"/><path d="M0,-40 Q-22,-140 -32,-230" fill="none" stroke="#f43f5e" stroke-width="3.5" filter="url(#ftnglow)"/><path d="M0,-40 Q22,-140 32,-230" fill="none" stroke="#facc15" stroke-width="3.5" filter="url(#ftnglow)"/><path d="M0,-40 Q66,-140 96,-230" fill="none" stroke="#4ade80" stroke-width="3.5" filter="url(#ftnglow)"/><path d="M0,-40 Q110,-140 160,-230" fill="none" stroke="#f472b6" stroke-width="3.5" filter="url(#ftnglow)"/>
+                <!-- Cone packaging -->
+                <polygon points="0,-40 -45,60 45,60" fill="#7c3aed" stroke="#fbbf24" stroke-width="3"/>
+                <polygon points="0,-40 -25,60 25,60" fill="#9333ea"/>
+                <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" font-weight="900" fill="#fef08a" text-anchor="middle">PEACOCK</text>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 405)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">FOUNTAINS</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#4cc9f0" text-anchor="middle">Giant Erupting Magic Cones</text>
+  </g>
+  
+</svg>

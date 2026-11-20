@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2b0a1a" />
+      <stop offset="60%" stop-color="#6b1426" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="250.0" r="120"/>
+    <circle cx="300.0" cy="250.0" r="180"/>
+    <circle cx="300.0" cy="250.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <g transform="translate(300.0, 250.0)">
+                <!-- String of red crackers (wala) -->
+                <path d="M-80,-70 Q0,-40 80,-70" fill="none" stroke="#facc15" stroke-width="3"/>
+                <rect x="-75" y="-45" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="-70" y1="-45" x2="-70" y2="-37" stroke="#facc15" stroke-width="2"/><rect x="-59" y="-48" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="-54" y1="-48" x2="-54" y2="-40" stroke="#facc15" stroke-width="2"/><rect x="-43" y="-51" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="-38" y1="-51" x2="-38" y2="-43" stroke="#facc15" stroke-width="2"/><rect x="-27" y="-54" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="-22" y1="-54" x2="-22" y2="-46" stroke="#facc15" stroke-width="2"/><rect x="-11" y="-57" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="-6" y1="-57" x2="-6" y2="-49" stroke="#facc15" stroke-width="2"/><rect x="5" y="-60" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="10" y1="-60" x2="10" y2="-52" stroke="#facc15" stroke-width="2"/><rect x="21" y="-57" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="26" y1="-57" x2="26" y2="-49" stroke="#facc15" stroke-width="2"/><rect x="37" y="-54" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="42" y1="-54" x2="42" y2="-46" stroke="#facc15" stroke-width="2"/><rect x="53" y="-51" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="58" y1="-51" x2="58" y2="-43" stroke="#facc15" stroke-width="2"/><rect x="69" y="-48" width="11" height="75" rx="3" fill="#dc2626" stroke="#991b1b" stroke-width="1.5"/><line x1="74" y1="-48" x2="74" y2="-40" stroke="#facc15" stroke-width="2"/>
+                <rect x="-55" y="40" width="110" height="28" rx="5" fill="#f59e0b" stroke="#78350f" stroke-width="2"/>
+                <text x="0" y="58" font-family="Arial, sans-serif" font-size="12" font-weight="900" fill="#78350f" text-anchor="middle">1000 WALA</text>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 455)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Classic 1000 Wala Festive Garland</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#fde047" text-anchor="middle">Fancy Crackers</text>
+  </g>
+  
+</svg>

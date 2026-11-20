@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1235" />
+      <stop offset="60%" stop-color="#3a1d6e" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06d6a0" />
+      <stop offset="100%" stop-color="#ffd166" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="250.0" r="120"/>
+    <circle cx="300.0" cy="250.0" r="180"/>
+    <circle cx="300.0" cy="250.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <g transform="translate(300.0, 250.0)">
+                <!-- Roll caps, pop pops, cartoon cracker -->
+                <circle cx="-50" cy="20" r="35" fill="#f43f5e" stroke="#fbbf24" stroke-width="3"/>
+                <text x="-50" y="26" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">POP POP</text>
+                
+                <rect x="10" y="-10" width="70" height="50" rx="8" fill="#06b6d4" stroke="#f59e0b" stroke-width="3"/>
+                <text x="45" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">SNAKE</text>
+                <text x="45" y="32" font-family="Arial, sans-serif" font-size="8" fill="#e0f2fe" text-anchor="middle">TABLETS</text>
+
+                <!-- Sparkler wand -->
+                <line x1="-30" y1="-80" x2="30" y2="-20" stroke="#facc15" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="-30" cy="-80" r="14" fill="#fbbf24"/>
+                <circle cx="-30" cy="-80" r="7" fill="#fff"/>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 455)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">Party Pop Pops Snappers (20 Pkts)</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#06d6a0" text-anchor="middle">Kids Special</text>
+  </g>
+  
+</svg>

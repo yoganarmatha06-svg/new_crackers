@@ -1,0 +1,104 @@
+/* ==========================================================
+   WHATSAPP FLOATING BUTTON STYLES
+   ========================================================== */
+
+.whatsapp-floating-wrapper {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.whatsapp-tooltip {
+  position: relative;
+  background: #180d36;
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  border-radius: var(--radius-md);
+  padding: 12px 28px 12px 14px;
+  max-width: 250px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.tooltip-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  color: var(--color-text-subtle);
+  padding: 2px;
+}
+
+.tooltip-close:hover {
+  color: #ffffff;
+}
+
+.tooltip-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #25d366;
+  margin-bottom: 2px;
+}
+
+.tooltip-sub {
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
+.whatsapp-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: all var(--transition-normal);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  border: 2px solid #25d366;
+  animation: pulsePing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes pulsePing {
+  75%, 100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.whatsapp-icon {
+  fill: currentColor;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-label {
+    display: none;
+  }
+  .whatsapp-btn {
+    padding: 14px;
+    border-radius: 50%;
+  }
+  .whatsapp-tooltip {
+    display: none;
+  }
+}

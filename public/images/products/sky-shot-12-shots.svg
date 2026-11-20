@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#03045e" />
+      <stop offset="60%" stop-color="#023e8a" />
+      <stop offset="100%" stop-color="#0a0319" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b4d8" />
+      <stop offset="100%" stop-color="#f72585" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle festive geometric pattern -->
+  <g opacity="0.06" stroke="#fff" stroke-width="1.5" fill="none">
+    <circle cx="300.0" cy="250.0" r="120"/>
+    <circle cx="300.0" cy="250.0" r="180"/>
+    <circle cx="300.0" cy="250.0" r="240"/>
+  </g>
+  
+  <!-- Graphic Art -->
+  
+            <defs><filter id="fncglow"><feGaussianBlur stdDeviation="5"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter></defs>
+            <g transform="translate(300.0, 250.0)">
+                <!-- Aerial multiple bursts -->
+                <g transform="translate(-60, -50)" filter="url(#fncglow)">
+                    <circle cx="0" cy="0" r="8" fill="#fff"/>
+                    <line x1="0" y1="0" x2="50.0" y2="0.0" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="43.3" y2="25.0" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="25.0" y2="43.3" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="0.0" y2="50.0" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="-25.0" y2="43.3" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="-43.3" y2="25.1" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="-50.0" y2="0.1" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="-43.3" y2="-24.9" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="-25.1" y2="-43.2" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="-0.1" y2="-50.0" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="24.9" y2="-43.4" stroke="#a855f7" stroke-width="2.5"/><line x1="0" y1="0" x2="43.2" y2="-25.1" stroke="#a855f7" stroke-width="2.5"/>
+                </g>
+                <g transform="translate(60, -60)" filter="url(#fncglow)">
+                    <circle cx="0" cy="0" r="8" fill="#fff"/>
+                    <line x1="0" y1="0" x2="50.0" y2="0.0" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="43.3" y2="25.0" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="25.0" y2="43.3" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="0.0" y2="50.0" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="-25.0" y2="43.3" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="-43.3" y2="25.1" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="-50.0" y2="0.1" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="-43.3" y2="-24.9" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="-25.1" y2="-43.2" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="-0.1" y2="-50.0" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="24.9" y2="-43.4" stroke="#ec4899" stroke-width="2.5"/><line x1="0" y1="0" x2="43.2" y2="-25.1" stroke="#ec4899" stroke-width="2.5"/>
+                </g>
+                <g transform="translate(0, -90)" filter="url(#fncglow)">
+                    <circle cx="0" cy="0" r="10" fill="#fff"/>
+                    <line x1="0" y1="0" x2="65.0" y2="0.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="60.1" y2="24.9" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="46.0" y2="45.9" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="24.9" y2="60.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="0.1" y2="65.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-24.8" y2="60.1" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-45.9" y2="46.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-60.0" y2="25.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-65.0" y2="0.1" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-60.1" y2="-24.8" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-46.1" y2="-45.9" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-25.0" y2="-60.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="-0.2" y2="-65.0" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="24.7" y2="-60.1" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="45.8" y2="-46.1" stroke="#eab308" stroke-width="3"/><line x1="0" y1="0" x2="60.0" y2="-25.1" stroke="#eab308" stroke-width="3"/>
+                </g>
+                <!-- Multi-shot tube block -->
+                <rect x="-70" y="10" width="140" height="80" rx="6" fill="#1e1b4b" stroke="#f59e0b" stroke-width="3"/>
+                <circle cx="-48" cy="35" r="12" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/><circle cx="-16" cy="35" r="12" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/><circle cx="16" cy="35" r="12" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/><circle cx="48" cy="35" r="12" fill="#0f172a" stroke="#fbbf24" stroke-width="2"/>
+                <text x="0" y="70" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#facc15" text-anchor="middle">12 SHOTS REPEATER</text>
+            </g>
+        
+  
+  <!-- Labels and Typography -->
+  
+  <g transform="translate(300.0, 455)">
+    <rect x="-180" y="-30" width="360" height="42" rx="21" fill="#000000" opacity="0.45"/>
+    <text x="0" y="-8" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">12 Shots Multi-Colour Aerial</text>
+    <text x="0" y="7" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#00b4d8" text-anchor="middle">Fancy Crackers</text>
+  </g>
+  
+</svg>
