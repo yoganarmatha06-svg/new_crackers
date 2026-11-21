@@ -34,7 +34,7 @@ export const products = [
   {
     id: 2,
     name: "Deluxe Giant Golden Anar",
-    category: "Flower Pots",
+    category: "Deluxe Giant Golden",
     categorySlug: "flower-pots",
     price: 520,
     offerPrice: 175,
@@ -54,7 +54,7 @@ export const products = [
   {
     id: 3,
     name: "Tri-Colour Jumbo Anar",
-    category: "Flower Pots",
+    category: "Tri-Colour",
     categorySlug: "flower-pots",
     price: 680,
     offerPrice: 230,
@@ -74,7 +74,7 @@ export const products = [
   {
     id: 25,
     name: "Colour Koti Deluxe Anar",
-    category: "Flower Pots",
+    category: "Rocket",
     categorySlug: "flower-pots",
     price: 420,
     offerPrice: 140,
@@ -94,7 +94,7 @@ export const products = [
   {
     id: 26,
     name: "Super Gold Sparkle Anar",
-    category: "Flower Pots",
+    category: "Sky Shot",
     categorySlug: "flower-pots",
     price: 390,
     offerPrice: 130,

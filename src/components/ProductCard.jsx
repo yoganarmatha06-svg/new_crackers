@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Eye, Star, Plus, Minus, ShieldCheck, Flame } from 'lucide-react';
+import { ShoppingCart, Eye, Star, Plus, Minus } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import '../styles/ProductCard.css';
 
-const ProductCard = ({ product, onQuickView }) => {
+const ProductCard = ({ product, onQuickView, onCardClick }) => {
   const [qty, setQty] = useState(1);
   const { addToCart } = useCart();
 
@@ -11,29 +11,46 @@ const ProductCard = ({ product, onQuickView }) => {
     ((product.price - product.offerPrice) / product.price) * 100
   );
 
-  const handleIncrement = () => {
+  const handleIncrement = (e) => {
+    e?.stopPropagation();
     setQty((prev) => Math.min(prev + 1, product.availableQty || 99));
   };
 
-  const handleDecrement = () => {
+  const handleDecrement = (e) => {
+    e?.stopPropagation();
     setQty((prev) => (prev > 1 ? prev - 1 : 1));
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e?.stopPropagation();
     addToCart(product, qty);
     setQty(1); // reset quantity counter after adding
   };
 
+  const handleCardClick = (e) => {
+    // If click originated from interactive buttons or controls, do not navigate
+    if (
+      e.target.closest('.card-actions') ||
+      e.target.closest('.btn-card-view-details') ||
+      e.target.closest('.quick-view-btn') ||
+      e.target.closest('.qty-btn') ||
+      e.target.closest('.add-cart-btn')
+    ) {
+      return;
+    }
+    if (onCardClick) {
+      onCardClick(product);
+    }
+  };
+
   return (
-    <div className="product-card">
+    <div
+      className={`product-card ${onCardClick ? 'is-clickable' : ''}`}
+      onClick={handleCardClick}
+    >
       {/* Top Badges */}
       <div className="card-top-badges">
         <span className="badge badge-discount">{discountPercent}% OFF</span>
-        {product.isGreenCracker && (
-          <span className="badge badge-green" title="CSIR-NEERI Approved Green Cracker">
-            <ShieldCheck size={12} /> Green
-          </span>
-        )}
       </div>
 
       {/* Product Image Box */}
@@ -46,10 +63,14 @@ const ProductCard = ({ product, onQuickView }) => {
         />
         <div className="card-quick-actions">
           <button
-            onClick={() => onQuickView && onQuickView(product)}
+            onClick={(e) => {
+              e.stopPropagation();
+              onQuickView && onQuickView(product);
+            }}
             className="quick-view-btn"
             title="View Details"
             aria-label="Quick View Details"
+            type="button"
           >
             <Eye size={16} /> View Details
           </button>

@@ -35,6 +35,29 @@
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.35);
 }
 
+.product-card.is-clickable {
+  cursor: pointer;
+}
+
+.product-card.is-clickable .product-name {
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.product-card.is-clickable:hover .product-name {
+  color: var(--color-gold-bright);
+}
+
+.product-card.is-clickable .product-category {
+  cursor: pointer;
+  transition: opacity var(--transition-fast);
+}
+
+.product-card.is-clickable .product-category:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
 /* Badges */
 .card-top-badges {
   position: absolute;

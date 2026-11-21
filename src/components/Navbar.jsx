@@ -5,7 +5,6 @@ import {
   X,
   Phone,
   FileText,
-  Flame,
   Search,
   ShoppingBag
 } from 'lucide-react';
@@ -88,23 +87,65 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Announcement Bar - Royal Purple & Shimmering Gold */}
-      <div className="announcement-bar no-print">
-        <div className="container announcement-content">
-          <div className="announcement-badge">
-            <Flame size={14} className="spark-icon" /> DIWALI DHAMAKA SALE
-          </div>
-          <div className="announcement-ticker">
-            <span>✨ Direct Sivakasi Wholesale Factory Prices</span>
-            <span className="dot">•</span>
-            <span>🌱 100% Certified Eco-Friendly Green Crackers</span>
-            <span className="dot">•</span>
-            <span>🚚 Express Delivery All Across India</span>
-          </div>
-          <div className="announcement-contact">
-            <a href="tel:+919842112345" className="phone-link">
-              <Phone size={13} /> +91 98421 12345
-            </a>
+      {/* Top Announcement Bar - Seamless Infinite Marquee */}
+      <div className="announcement-bar no-print" aria-label="Announcement marquee">
+        <div className="announcement-marquee-wrapper">
+          <div className="announcement-marquee-track">
+            {/* Primary Track Content */}
+            <div className="announcement-marquee-group">
+              <span className="announcement-item">✨ Direct Sivakasi Wholesale Factory Prices</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🌱 100% Certified Eco-Friendly Green Crackers</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🚚 Express Delivery All Across India</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">
+                <a href="tel:+919842112345" className="announcement-phone-link">
+                  <Phone size={13} className="phone-icon" /> +91 98421 12345
+                </a>
+              </span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">✨ Direct Sivakasi Wholesale Factory Prices</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🌱 100% Certified Eco-Friendly Green Crackers</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🚚 Express Delivery All Across India</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">
+                <a href="tel:+919842112345" className="announcement-phone-link">
+                  <Phone size={13} className="phone-icon" /> +91 98421 12345
+                </a>
+              </span>
+              <span className="announcement-sep">•</span>
+            </div>
+
+            {/* Seamless Infinite Clone */}
+            <div className="announcement-marquee-group" aria-hidden="true">
+              <span className="announcement-item">✨ Direct Sivakasi Wholesale Factory Prices</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🌱 100% Certified Eco-Friendly Green Crackers</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🚚 Express Delivery All Across India</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">
+                <a href="tel:+919842112345" className="announcement-phone-link">
+                  <Phone size={13} className="phone-icon" /> +91 98421 12345
+                </a>
+              </span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">✨ Direct Sivakasi Wholesale Factory Prices</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🌱 100% Certified Eco-Friendly Green Crackers</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">🚚 Express Delivery All Across India</span>
+              <span className="announcement-sep">•</span>
+              <span className="announcement-item">
+                <a href="tel:+919842112345" className="announcement-phone-link">
+                  <Phone size={13} className="phone-icon" /> +91 98421 12345
+                </a>
+              </span>
+              <span className="announcement-sep">•</span>
+            </div>
           </div>
         </div>
       </div>

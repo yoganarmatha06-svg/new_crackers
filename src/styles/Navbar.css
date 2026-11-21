@@ -2,75 +2,129 @@
    NAVBAR STYLES (White Theme with Royal Purple & Gold Accents)
    ========================================================== */
 
-/* Announcement Bar - Deep Royal Purple & Gold */
+/* Announcement Bar - Deep Royal Purple & Gold Infinite Marquee */
 .announcement-bar {
   background: linear-gradient(90deg, #2b074a 0%, #4a0e78 50%, #2b074a 100%);
   border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-  padding: 8px 0;
-  font-size: 0.82rem;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  font-size: 0.88rem;
   color: #fef08a;
 }
 
-.announcement-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.announcement-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--grad-gold);
-  color: #2e1065;
-  padding: 3px 12px;
-  border-radius: var(--radius-full);
-  font-weight: 800;
-  font-size: 0.72rem;
-  letter-spacing: 0.5px;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
-}
-
-.spark-icon {
-  animation: pulseGlow 1.5s infinite;
-}
-
-.announcement-ticker {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.announcement-marquee-wrapper {
+  width: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.announcement-marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: announcementMarqueeScroll 38s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .announcement-bar:hover .announcement-marquee-track {
+    animation-play-state: paused;
+  }
+}
+
+.announcement-marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
   white-space: nowrap;
 }
 
-.announcement-ticker span {
-  display: inline-block;
-  font-weight: 500;
+.announcement-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 18px;
+  font-weight: 550;
+  color: #fef08a;
+  letter-spacing: 0.25px;
+  line-height: 1;
 }
 
-.announcement-ticker .dot {
+.announcement-sep {
   color: #ffd700;
-  font-weight: bold;
+  font-weight: 700;
+  opacity: 0.85;
+  font-size: 0.95rem;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
 }
 
-.announcement-contact .phone-link {
+.announcement-phone-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   color: #ffd700;
   font-weight: 700;
-  transition: opacity var(--transition-fast);
+  text-decoration: none;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  line-height: 1;
 }
 
-.announcement-contact .phone-link:hover {
-  opacity: 0.85;
+.announcement-phone-link .phone-icon {
+  flex-shrink: 0;
+  color: #ffd700;
+}
+
+.announcement-phone-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.announcement-phone-link:hover .phone-icon {
   color: #ffffff;
 }
 
-@media (max-width: 900px) {
-  .announcement-ticker {
-    display: none;
+/* Seamless infinite right-to-left marquee animation */
+@keyframes announcementMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .announcement-bar {
+    height: 48px;
+    font-size: 0.82rem;
+  }
+
+  .announcement-item {
+    padding: 0 12px;
+  }
+
+  .announcement-marquee-track {
+    animation-duration: 30s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-marquee-track {
+    animation: none;
+    transform: none;
   }
 }
 
@@ -169,6 +223,7 @@
 .brand-name .highlight {
   background: linear-gradient(135deg, #7e22ce 0%, #b45309 60%, #ffd700 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

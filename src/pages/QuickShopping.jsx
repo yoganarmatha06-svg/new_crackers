@@ -36,12 +36,15 @@ const QuickShopping = () => {
     const cat = searchParams.get('category');
     if (cat) {
       setSelectedCategory(cat);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     const q = searchParams.get('search');
     if (q !== null) {
       setSearchTerm(q);
     }
   }, [searchParams]);
+
+  const currentCategoryObj = categories.find((c) => c.slug === selectedCategory);
 
   const handleCategoryChange = (slug) => {
     setSelectedCategory(slug);
@@ -86,11 +89,20 @@ const QuickShopping = () => {
       <section className="shopping-hero">
         <div className="container">
           <div className="shopping-hero-badge">
-            <Flame size={14} className="hero-flame-icon" /> 2026 SIVAKASI FESTIVE CATALOG
+            <Flame size={14} className="hero-flame-icon" />{' '}
+            {selectedCategory !== 'all' && currentCategoryObj
+              ? `CATEGORY: ${currentCategoryObj.name.toUpperCase()}`
+              : '2026 SIVAKASI FESTIVE CATALOG'}
           </div>
-          <h1 className="shopping-hero-title">Quick Shopping Store</h1>
+          <h1 className="shopping-hero-title">
+            {selectedCategory !== 'all' && currentCategoryObj
+              ? `${currentCategoryObj.name} Crackers`
+              : 'Quick Shopping Store'}
+          </h1>
           <p className="shopping-hero-subtitle">
-            Order authentic Sivakasi crackers directly from the factory at wholesale prices. Flat 70% discount applied to all items.
+            {selectedCategory !== 'all' && currentCategoryObj
+              ? `Browse authentic Sivakasi ${currentCategoryObj.name} (${currentCategoryObj.tamilName}) at genuine direct factory wholesale rates.`
+              : 'Order authentic Sivakasi crackers directly from the factory at wholesale prices. Flat 70% discount applied to all items.'}
           </p>
 
           {/* Search Bar */}

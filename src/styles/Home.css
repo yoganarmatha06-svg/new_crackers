@@ -190,49 +190,7 @@
   }
 }
 
-/* Stats Strip */
-.stats-strip {
-  background: linear-gradient(90deg, #180936 0%, #2b0d5c 50%, #180936 100%);
-  border-top: 1px solid rgba(255, 193, 7, 0.2);
-  border-bottom: 1px solid rgba(255, 193, 7, 0.2);
-  padding: 30px 0;
-}
-
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.stat-card {
-  text-align: center;
-  padding: 10px;
-}
-
-.stat-num {
-  display: block;
-  font-size: 2.4rem;
-  font-weight: 900;
-  color: var(--color-gold-bright);
-  line-height: 1.1;
-  margin-bottom: 4px;
-}
-
-.stat-label {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  font-weight: 500;
-}
-
-@media (max-width: 768px) {
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-  .stat-num {
-    font-size: 2rem;
-  }
-}
+/* Stats Strip styles are loaded via StatsStrip.css */
 
 /* Categories Section */
 .categories-section {
@@ -690,6 +648,7 @@
   margin-bottom: 8px;
   background: linear-gradient(135deg, #3b0764 0%, #6b21a8 55%, #d97706 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 4px rgba(107, 33, 168, 0.15));
 }

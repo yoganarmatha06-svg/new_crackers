@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ShoppingCart, Star, ShieldCheck, Volume2, Plus, Minus, CheckCircle, AlertTriangle } from 'lucide-react';
+import { X, ShoppingCart, Star, ShieldCheck, Volume2, Plus, Minus, CheckCircle, AlertTriangle, Zap } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import '../styles/ProductModal.css';
 
@@ -7,7 +7,7 @@ const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
 
   const [qty, setQty] = useState(1);
-  const { addToCart } = useCart();
+  const { addToCart, openCart } = useCart();
 
   const discountPercent = Math.round(
     ((product.price - product.offerPrice) / product.price) * 100
@@ -23,6 +23,12 @@ const ProductModal = ({ product, onClose }) => {
 
   const handleAddToCart = () => {
     addToCart(product, qty);
+    onClose();
+  };
+
+  const handleBuyNow = () => {
+    addToCart(product, qty);
+    if (openCart) openCart();
     onClose();
   };
 
@@ -131,8 +137,12 @@ const ProductModal = ({ product, onClose }) => {
                 </button>
               </div>
 
-              <button onClick={handleAddToCart} className="btn btn-primary modal-add-btn">
+              <button onClick={handleAddToCart} className="btn btn-primary modal-add-btn" type="button">
                 <ShoppingCart size={18} /> Add {qty} to Cart • ₹{product.offerPrice * qty}
+              </button>
+
+              <button onClick={handleBuyNow} className="btn modal-buy-now-btn" type="button">
+                <Zap size={18} /> Buy Now
               </button>
             </div>
           </div>

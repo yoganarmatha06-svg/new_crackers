@@ -224,6 +224,7 @@ button {
   margin-bottom: 14px;
   background: linear-gradient(135deg, #ffffff 30%, #ffd700 75%, #f59e0b 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 2px 8px rgba(107, 33, 168, 0.4));
 }

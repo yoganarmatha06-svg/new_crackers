@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Sparkles,
   Award,
@@ -16,20 +16,27 @@ import {
 } from 'lucide-react';
 import Hero from '../components/Hero';
 import WelcomeSection from '../components/WelcomeSection';
-import SkyShotFireworks from '../components/SkyShotFireworks';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
 import ProductModal from '../components/ProductModal';
 import FestivalBanner from '../components/FestivalBanner';
+import StatsStrip from '../components/StatsStrip';
 import { GoldStripeRibbon, GoldStripeDivider } from '../components/GoldStripe';
 import { categories } from '../data/categories';
 import { products, getFeaturedProducts } from '../data/products';
 import '../styles/Home.css';
 
 const Home = () => {
+  const navigate = useNavigate();
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('flower-pots');
   const [activeTab, setActiveTab] = useState('all');
+
+  const handleCategoryCardClick = (product) => {
+    const slug = product?.categorySlug || 'flower-pots';
+    navigate(`/quick-shopping?category=${slug}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Filter exactly 5 products for the selected category (no mixing)
   const categoryProducts = useMemo(() => {
@@ -84,9 +91,6 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      {/* Infinite SkyShot Fireworks Blast Animation (every 3 seconds) */}
-      <SkyShotFireworks />
-
       {/* 1. Hero Banner Section */}
       <Hero />
 
@@ -117,6 +121,7 @@ const Home = () => {
                 key={product.id}
                 product={product}
                 onQuickView={setSelectedProduct}
+                onCardClick={handleCategoryCardClick}
               />
             ))}
           </div>
@@ -126,27 +131,8 @@ const Home = () => {
       {/* Gold Stripe Divider */}
       <GoldStripeDivider label="SIVAKASI DIRECT WHOLESALE ADVANTAGE" />
 
-      {/* 3. Key Stats Strip */}
-      <section className="stats-strip">
-        <div className="container stats-container">
-          <div className="stat-card">
-            <span className="stat-num">30+</span>
-            <span className="stat-label">Years Sivakasi Heritage</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-num">100+</span>
-            <span className="stat-label">Green Cracker Varieties</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-num">50k+</span>
-            <span className="stat-label">Delighted Indian Families</span>
-          </div>
-          <div className="stat-card">
-            <span className="stat-num">70%</span>
-            <span className="stat-label">Factory Direct Savings</span>
-          </div>
-        </div>
-      </section>
+      {/* 3. Key Stats Strip (Scroll-Triggered Animated Counting) */}
+      <StatsStrip />
 
       {/* Gold Stripe Divider */}
       <GoldStripeDivider label="FESTIVAL FAVORITES &amp; BESTSELLERS" />
@@ -158,7 +144,7 @@ const Home = () => {
             <span className="section-badge">
               <TrendingUp size={14} /> FESTIVAL FAVORITES
             </span>
-            <h2 className="section-title">Featured Diwali Crackers</h2>
+            <h2 className="section-title">Our Categories</h2>
             <p className="section-subtitle">
               Most loved fireworks of this season. Genuine Sivakasi quality tested for brilliant colors, long burn times, and maximum safety.
             </p>
@@ -205,6 +191,7 @@ const Home = () => {
                 key={product.id}
                 product={product}
                 onQuickView={setSelectedProduct}
+                onCardClick={handleCategoryCardClick}
               />
             ))}
           </div>
