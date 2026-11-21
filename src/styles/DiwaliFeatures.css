@@ -1,0 +1,365 @@
+/* ==========================================================
+   DIWALI FEATURES / WHY CHOOSE US - SCROLL ANIMATED SHOWCASE
+   ========================================================== */
+
+.diwali-features-section {
+  background: radial-gradient(circle at center, #ffffff 0%, #fffcf2 45%, #fff6e0 100%);
+  padding: 60px 0 75px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(245, 158, 11, 0.2);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Festive Background Accent Glow */
+.diwali-features-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(254, 243, 199, 0.8) 0%, rgba(255, 251, 235, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Section Header (Light Theme Harmonization) */
+.diwali-features-header {
+  text-align: center;
+  margin-bottom: 45px;
+  position: relative;
+  z-index: 1;
+}
+
+.diwali-features-header .section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #b45309;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.1);
+}
+
+.diwali-features-header .section-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #7e22ce 0%, #b45309 60%, #dc2626 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 6px rgba(180, 83, 9, 0.15));
+}
+
+.diwali-features-header .section-subtitle {
+  font-size: 1.02rem;
+  color: #475569;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Container sizing for generous, wide spacing */
+.diwali-features-section .container {
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 clamp(20px, 3vw, 50px);
+}
+
+/* 3-Column Interactive Layout - Spread out with ~4 inch breathing room */
+.diwali-features-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(80px, 10vw, 160px);
+  position: relative;
+  z-index: 1;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Left & Right Columns (Pushed outward to sides away from center image) */
+.features-col {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.features-col-left {
+  align-items: flex-start;
+  padding-left: clamp(10px, 3vw, 40px);
+}
+
+.features-col-right {
+  align-items: flex-end;
+  padding-right: clamp(10px, 3vw, 40px);
+}
+
+/* Center Image Column */
+.features-col-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.diwali-center-art-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 370px;
+  width: 100%;
+}
+
+.diwali-center-img {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(180, 83, 9, 0.18));
+}
+
+/* Feature Block Styling (Clean Layout without Container Boxes) */
+.feature-block {
+  max-width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  transition: transform 0.3s ease;
+}
+
+.feature-block:hover {
+  transform: translateY(-4px);
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.feature-icon-wrap {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.feature-block:hover .feature-icon-wrap {
+  transform: scale(1.08);
+}
+
+.feature-icon-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.feature-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #dc2626;
+  margin: 0 0 8px 0;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.feature-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================================
+   SCROLL-TRIGGERED 4-DIRECTION CORNER / SIDE ANIMATIONS
+   (Triggers precisely when user scrolls to this place)
+   ========================================================== */
+
+/* Base Transition for fast, clean reset when scrolling away */
+.diwali-center-art-wrap,
+.feature-top-left,
+.feature-bottom-left,
+.feature-top-right,
+.feature-bottom-right {
+  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+}
+
+/* 1. Center Diwali Artwork: Fade-in + Scale-up */
+.diwali-center-art-wrap {
+  opacity: 0;
+  transform: scale(0.65);
+  will-change: transform, opacity;
+}
+
+.diwali-features-section.is-animated .diwali-center-art-wrap {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+}
+
+/* 2. Side 1 - Top-Left (Quality): Flies in from Top-Left */
+.feature-top-left {
+  opacity: 0;
+  transform: translate(-180px, -100px);
+  will-change: transform, opacity;
+}
+
+.diwali-features-section.is-animated .feature-top-left {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+/* 3. Side 2 - Bottom-Left (Safe to Use): Flies in from Bottom-Left */
+.feature-bottom-left {
+  opacity: 0;
+  transform: translate(-180px, 100px);
+  will-change: transform, opacity;
+}
+
+.diwali-features-section.is-animated .feature-bottom-left {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s;
+}
+
+/* 4. Side 3 - Top-Right (Genuine Price): Flies in from Top-Right */
+.feature-top-right {
+  opacity: 0;
+  transform: translate(180px, -100px);
+  will-change: transform, opacity;
+}
+
+.diwali-features-section.is-animated .feature-top-right {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+}
+
+/* 5. Side 4 - Bottom-Right (Customer Satisfaction): Flies in from Bottom-Right */
+.feature-bottom-right {
+  opacity: 0;
+  transform: translate(180px, 100px);
+  will-change: transform, opacity;
+}
+
+.diwali-features-section.is-animated .feature-bottom-right {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s;
+}
+
+/* ==========================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================== */
+
+@media (max-width: 1040px) {
+  .diwali-features-grid {
+    gap: 36px;
+  }
+  .features-col-left {
+    align-items: center;
+    padding-left: 0;
+  }
+  .features-col-right {
+    align-items: center;
+    padding-right: 0;
+  }
+  .diwali-center-img {
+    max-width: 290px;
+  }
+  .feature-block {
+    max-width: 270px;
+    padding: 0;
+  }
+  .feature-title {
+    font-size: 1.3rem;
+  }
+  .feature-desc {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .diwali-features-section {
+    padding: 50px 0 60px;
+  }
+
+  .diwali-features-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  /* Center Image placed at top on mobile */
+  .features-col-center {
+    order: -1;
+    margin-bottom: 10px;
+  }
+
+  .diwali-center-img {
+    max-width: 260px;
+  }
+
+  .features-col {
+    gap: 24px;
+    align-items: center;
+  }
+
+  .feature-block {
+    max-width: 440px;
+    width: 100%;
+  }
+
+  /* Mobile Animation transforms adapted for vertical flow */
+  .feature-top-left {
+    transform: translateX(-40px);
+  }
+
+  .feature-bottom-left {
+    transform: translateX(-40px);
+  }
+
+  .feature-top-right {
+    transform: translateX(40px);
+  }
+
+  .feature-bottom-right {
+    transform: translateX(40px);
+  }
+}
+
+/* Accessibility / Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .diwali-center-art-wrap,
+  .feature-block {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

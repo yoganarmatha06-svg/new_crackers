@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Eye, Star, Plus, Minus } from 'lucide-react';
+import { ShoppingCart, Eye, Star, Plus, Minus, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import '../styles/ProductCard.css';
 
-const ProductCard = ({ product, onQuickView, onCardClick }) => {
+const ProductCard = ({ product, onQuickView, onCardClick, hideCart = false }) => {
   const [qty, setQty] = useState(1);
   const { addToCart } = useCart();
 
@@ -45,7 +45,7 @@ const ProductCard = ({ product, onQuickView, onCardClick }) => {
 
   return (
     <div
-      className={`product-card ${onCardClick ? 'is-clickable' : ''}`}
+      className={`product-card ${onCardClick ? 'is-clickable' : ''} ${hideCart ? 'hide-cart' : ''}`}
       onClick={handleCardClick}
     >
       {/* Top Badges */}
@@ -105,48 +105,66 @@ const ProductCard = ({ product, onQuickView, onCardClick }) => {
         </div>
 
         {/* Quantity Selector & Add To Cart Button */}
-        <div className="card-actions">
-          <div className="qty-selector">
+        {!hideCart && (
+          <div className="card-actions">
+            <div className="qty-selector">
+              <button
+                onClick={handleDecrement}
+                className="qty-btn"
+                aria-label="Decrease quantity"
+                disabled={qty <= 1}
+                type="button"
+              >
+                <Minus size={13} />
+              </button>
+              <span className="qty-value">{qty}</span>
+              <button
+                onClick={handleIncrement}
+                className="qty-btn"
+                aria-label="Increase quantity"
+                disabled={qty >= product.availableQty}
+                type="button"
+              >
+                <Plus size={13} />
+              </button>
+            </div>
+
             <button
-              onClick={handleDecrement}
-              className="qty-btn"
-              aria-label="Decrease quantity"
-              disabled={qty <= 1}
+              onClick={handleAddToCart}
+              className="btn btn-primary add-cart-btn"
+              disabled={!product.inStock}
               type="button"
             >
-              <Minus size={13} />
-            </button>
-            <span className="qty-value">{qty}</span>
-            <button
-              onClick={handleIncrement}
-              className="qty-btn"
-              aria-label="Increase quantity"
-              disabled={qty >= product.availableQty}
-              type="button"
-            >
-              <Plus size={13} />
+              <ShoppingCart size={14} className="cart-btn-icon" />
+              <span className="add-cart-text">{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
             </button>
           </div>
+        )}
 
-          <button
-            onClick={handleAddToCart}
-            className="btn btn-primary add-cart-btn"
-            disabled={!product.inStock}
-            type="button"
-          >
-            <ShoppingCart size={14} className="cart-btn-icon" />
-            <span className="add-cart-text">{product.inStock ? 'Add to Cart' : 'Out of Stock'}</span>
-          </button>
-        </div>
-
-        {/* View Details Button */}
+        {/* View Details / Explore Category Button */}
         <button
-          onClick={() => onQuickView && onQuickView(product)}
+          onClick={(e) => {
+            if (hideCart && onCardClick) {
+              e.stopPropagation();
+              onCardClick(product);
+            } else if (onQuickView) {
+              e.stopPropagation();
+              onQuickView(product);
+            }
+          }}
           className="btn-card-view-details"
-          title="View Details"
+          title={hideCart ? 'View Products' : 'View Details'}
           type="button"
         >
-          <Eye size={14} /> <span>View Details</span>
+          {hideCart ? (
+            <>
+              <span>View Products</span> <ArrowRight size={14} />
+            </>
+          ) : (
+            <>
+              <Eye size={14} /> <span>View Details</span>
+            </>
+          )}
         </button>
       </div>
     </div>

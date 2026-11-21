@@ -71,7 +71,7 @@ const WelcomeSection = () => {
           </p>
           <div className="welcome-btn-wrapper">
             <a href="#categories" className="welcome-explore-btn">
-              Explore Our Products
+              Explore Our Categories
             </a>
           </div>
         </div>

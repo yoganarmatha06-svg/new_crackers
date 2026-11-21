@@ -222,7 +222,54 @@
   }
 }
 
-/* Featured Products */
+/* Featured Products (Our Categories Section - Clean White Background) */
+.featured-section {
+  background: #ffffff;
+  padding: 60px 0 75px;
+  position: relative;
+}
+
+.featured-section .section-header {
+  margin-bottom: 32px;
+}
+
+.featured-section .section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #faf5ff;
+  border: 1px solid #d8b4fe;
+  color: #6b21a8;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 10px rgba(107, 33, 168, 0.08);
+}
+
+.featured-section .section-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #3b0764 0%, #6b21a8 55%, #d97706 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(107, 33, 168, 0.15));
+}
+
+.featured-section .section-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
 .product-filter-tabs {
   display: flex;
   align-items: center;
@@ -237,15 +284,16 @@
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 600;
-  color: var(--color-text-muted);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   transition: all var(--transition-fast);
 }
 
 .tab-btn:hover {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
+  color: #1e1b4b;
+  background: #f1f5f9;
+  border-color: #cbd5e1;
 }
 
 .tab-btn.active {
@@ -703,89 +751,107 @@
   }
 }
 
-/* Product Cards inside Showcase Section (Crisp White Card with Gold Stripe) */
-.home-category-showcase-section .product-card {
+/* Product Cards inside Showcase & Featured Categories Sections (Crisp White Card with Gold Stripe) */
+.home-category-showcase-section .product-card,
+.featured-section .product-card {
   background: #ffffff;
   border: 1.5px solid #e2e8f0;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
   height: 100%;
 }
 
-.home-category-showcase-section .product-card:hover {
+.home-category-showcase-section .product-card:hover,
+.featured-section .product-card:hover {
   border-color: #ffd700;
   box-shadow: 0 12px 28px rgba(107, 33, 168, 0.16);
   transform: translateY(-5px);
 }
 
-.home-category-showcase-section .card-img-container {
+.home-category-showcase-section .card-img-container,
+.featured-section .card-img-container {
   background: #f8fafc;
 }
 
-.home-category-showcase-section .product-name {
+.home-category-showcase-section .product-name,
+.featured-section .product-name {
   color: #1e1b4b;
 }
 
-.home-category-showcase-section .product-category {
+.home-category-showcase-section .product-category,
+.featured-section .product-category {
   color: #6b21a8;
 }
 
-.home-category-showcase-section .product-rating {
+.home-category-showcase-section .product-rating,
+.featured-section .product-rating {
   color: #64748b;
 }
 
-.home-category-showcase-section .product-unit {
+.home-category-showcase-section .product-unit,
+.featured-section .product-unit {
   color: #64748b;
 }
 
-.home-category-showcase-section .product-unit strong {
+.home-category-showcase-section .product-unit strong,
+.featured-section .product-unit strong {
   color: #1e1b4b;
 }
 
-.home-category-showcase-section .product-pricing {
+.home-category-showcase-section .product-pricing,
+.featured-section .product-pricing {
   border-bottom: 1px solid #f1f5f9;
 }
 
-.home-category-showcase-section .offer-price {
+.home-category-showcase-section .offer-price,
+.featured-section .offer-price {
   color: #15803d;
   text-shadow: none;
 }
 
-.home-category-showcase-section .mrp-price {
+.home-category-showcase-section .mrp-price,
+.featured-section .mrp-price {
   color: #94a3b8;
 }
 
-.home-category-showcase-section .savings-pill {
+.home-category-showcase-section .savings-pill,
+.featured-section .savings-pill {
   background: #fef3c7;
   color: #b45309;
   border-color: #fde68a;
 }
 
-.home-category-showcase-section .qty-selector {
+.home-category-showcase-section .qty-selector,
+.featured-section .qty-selector {
   background: #f1f5f9;
   border-color: #cbd5e1;
 }
 
-.home-category-showcase-section .qty-btn {
+.home-category-showcase-section .qty-btn,
+.featured-section .qty-btn {
   color: #6b21a8;
 }
 
-.home-category-showcase-section .qty-btn:hover:not(:disabled) {
+.home-category-showcase-section .qty-btn:hover:not(:disabled),
+.featured-section .qty-btn:hover:not(:disabled) {
   background: #6b21a8;
   color: #ffffff;
 }
 
-.home-category-showcase-section .qty-value {
+.home-category-showcase-section .qty-value,
+.featured-section .qty-value {
   color: #0f172a;
 }
 
-.home-category-showcase-section .btn-card-view-details {
+.home-category-showcase-section .btn-card-view-details,
+.featured-section .btn-card-view-details {
   background: #faf5ff;
   border-color: #d8b4fe;
   color: #6b21a8;
   border-radius: var(--radius-full);
 }
 
-.home-category-showcase-section .btn-card-view-details:hover {
+.home-category-showcase-section .btn-card-view-details:hover,
+.featured-section .btn-card-view-details:hover {
   background: var(--grad-gold);
   color: #2e1065;
   border-color: #f59e0b;

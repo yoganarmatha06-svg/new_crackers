@@ -9,7 +9,6 @@ import {
   Percent,
   CheckCircle,
   AlertTriangle,
-  Star,
   ArrowRight,
   TrendingUp,
   PackageCheck
@@ -19,8 +18,9 @@ import WelcomeSection from '../components/WelcomeSection';
 import CategoryCard from '../components/CategoryCard';
 import ProductCard from '../components/ProductCard';
 import ProductModal from '../components/ProductModal';
-import FestivalBanner from '../components/FestivalBanner';
 import StatsStrip from '../components/StatsStrip';
+import DiwaliFeatures from '../components/DiwaliFeatures';
+import TrustFeaturesBar from '../components/TrustFeaturesBar';
 import { GoldStripeRibbon, GoldStripeDivider } from '../components/GoldStripe';
 import { categories } from '../data/categories';
 import { products, getFeaturedProducts } from '../data/products';
@@ -58,36 +58,6 @@ const Home = () => {
   };
 
   const currentProducts = getTabProducts();
-
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Ramesh Sundaram',
-      city: 'Chennai',
-      rating: 5,
-      comment:
-        'Outstanding quality crackers! Ordered the 50-item Mega Anandam Gift Box. Everything arrived in waterproof secure packaging well before Diwali. The flower pots and peacock fountains were stunning.',
-      verified: 'Verified Sivakasi Buyer'
-    },
-    {
-      id: 2,
-      name: 'Priya Sharma',
-      city: 'Bengaluru',
-      rating: 5,
-      comment:
-        'The green sparklers and kids pop-pops were safe and produced very low smoke. The factory direct prices are genuinely half of Bangalore street prices. New Crackers has become our family Diwali tradition!',
-      verified: 'Verified Sivakasi Buyer'
-    },
-    {
-      id: 3,
-      name: 'Karthik Raja',
-      city: 'Coimbatore',
-      rating: 5,
-      comment:
-        'The 30-shot sky symphony repeater was the highlight of our apartment complex celebration! Amazing colors and synchronized firing. The WhatsApp order confirmation and tracking was super smooth.',
-      verified: 'Verified Sivakasi Buyer'
-    }
-  ];
 
   return (
     <div className="home-page">
@@ -205,129 +175,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Gold Stripe Ribbon before Festival Banner */}
-      <GoldStripeRibbon />
+      {/* Sivakasi Trust & Guarantee Features Strip */}
+      <TrustFeaturesBar />
 
-      {/* 5. Festival Banner */}
-      <FestivalBanner />
-
-      {/* Gold Stripe Divider */}
-      <GoldStripeDivider label="THE SIVAKASI PROMISE" />
-
-      {/* 6. Why Choose Us Section */}
-      <section className="section why-choose-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">
-              <Award size={14} /> THE SIVAKASI PROMISE
-            </span>
-            <h2 className="section-title">Why Choose New Crackers?</h2>
-            <p className="section-subtitle">
-              When you celebrate Diwali with your loved ones, you deserve genuine quality, tested safety, and honest factory pricing.
-            </p>
-          </div>
-
-          <div className="why-grid">
-            <div className="why-card gold-stripe-top">
-              <div className="why-icon-box">
-                <Award size={32} />
-              </div>
-              <h3>Best Quality Products</h3>
-              <p>
-                Direct from licensed Sivakasi manufacturers. Pure chemical formulations ensuring vibrant hues, steady burns, and zero misfires.
-              </p>
-            </div>
-
-            <div className="why-card gold-stripe-top">
-              <div className="why-icon-box">
-                <Percent size={32} />
-              </div>
-              <h3>Affordable Factory Prices</h3>
-              <p>
-                Eliminating middlemen and retail markups. Enjoy direct wholesale factory pricing with pre-booking discounts of up to 70% off MRP.
-              </p>
-            </div>
-
-            <div className="why-card gold-stripe-top">
-              <div className="why-icon-box">
-                <PackageCheck size={32} />
-              </div>
-              <h3>Safe Fireproof Packaging</h3>
-              <p>
-                Every order is hand-inspected, packed in moisture-resistant bubble wraps, and sealed inside heavy-duty corrugated safety cartons.
-              </p>
-            </div>
-
-            <div className="why-card gold-stripe-top">
-              <div className="why-icon-box">
-                <Truck size={32} />
-              </div>
-              <h3>Fast &amp; Tracked Delivery</h3>
-              <p>
-                Partnered with dedicated road transport networks across India with live consignment tracking and timely pre-Diwali delivery.
-              </p>
-            </div>
-
-            <div className="why-card gold-stripe-top">
-              <div className="why-icon-box">
-                <ShieldCheck size={32} />
-              </div>
-              <h3>100% Green Certified</h3>
-              <p>
-                Complies strictly with Supreme Court and CSIR-NEERI green cracker standards with QR code verification and 30% reduced emissions.
-              </p>
-            </div>
-
-            <div className="why-card gold-stripe-top">
-              <div className="why-icon-box">
-                <HeartHandshake size={32} />
-              </div>
-              <h3>Customer Satisfaction</h3>
-              <p>
-                Over 50,000 delighted families across 30 years. Dedicated WhatsApp and phone support team ready to assist you every step of the way.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gold Stripe Divider */}
-      <GoldStripeDivider label="HAPPY CUSTOMER REVIEWS" />
-
-      {/* 7. Customer Reviews */}
-      <section className="section testimonials-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-badge">
-              <Star size={14} /> CELEBRATION STORIES
-            </span>
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="section-subtitle">
-              Read how thousands of families made their Diwali celebrations grander and safer with New Crackers Sivakasi.
-            </p>
-          </div>
-
-          <div className="testimonials-grid">
-            {testimonials.map((t) => (
-              <div key={t.id} className="testimonial-card gold-stripe-top">
-                <div className="test-rating">
-                  {[...Array(t.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="star-fill" />
-                  ))}
-                </div>
-                <p className="test-comment">"{t.comment}"</p>
-                <div className="test-author">
-                  <div className="author-avatar">{t.name[0]}</div>
-                  <div>
-                    <h4 className="author-name">{t.name}</h4>
-                    <span className="author-city">{t.city} • <span className="verified-text">{t.verified}</span></span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 5. Diwali Features / The Sivakasi Promise (Scroll-Animated Center Diwali Layout) */}
+      <DiwaliFeatures />
 
       {/* 8. Safety Tips Quick Box */}
       <section className="safety-preview-section">

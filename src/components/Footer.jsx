@@ -5,10 +5,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  ShieldCheck,
-  Truck,
-  Award,
-  Sparkles,
   Heart
 } from 'lucide-react';
 import { GoldStripeRibbon } from './GoldStripe';
@@ -21,51 +17,6 @@ const Footer = () => {
     <footer className="site-footer no-print">
       {/* Gold Stripe Ribbon at top of footer */}
       <GoldStripeRibbon />
-
-      {/* Top Value Propositions */}
-      <div className="footer-features">
-        <div className="container features-grid">
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <Award className="feature-icon" size={24} />
-            </div>
-            <div className="feature-text">
-              <h4>100% Genuine Sivakasi</h4>
-              <p>Direct from Sivakasi factory manufacturing units</p>
-            </div>
-          </div>
-
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <ShieldCheck className="feature-icon" size={24} />
-            </div>
-            <div className="feature-text">
-              <h4>Green Cracker Certified</h4>
-              <p>Approved by CSIR-NEERI for low emission &amp; safe lighting</p>
-            </div>
-          </div>
-
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <Truck className="feature-icon" size={24} />
-            </div>
-            <div className="feature-text">
-              <h4>Safe &amp; Express Transport</h4>
-              <p>Specialized fireproof safety packaging delivered nationwide</p>
-            </div>
-          </div>
-
-          <div className="feature-item">
-            <div className="feature-icon-box">
-              <Sparkles className="feature-icon" size={24} />
-            </div>
-            <div className="feature-text">
-              <h4>Direct Factory Pricing</h4>
-              <p>Save up to 70% with genuine wholesale prices</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer Links */}
       <div className="container footer-main">
@@ -94,58 +45,24 @@ const Footer = () => {
             <h4 className="footer-heading">Quick Navigation</h4>
             <ul className="footer-links">
               <li>
-                <Link to="/">Home Page</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About Our Heritage</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/quick-shopping">Quick Shopping Store</Link>
+                <Link to="/quick-shopping">Quick Shopping</Link>
               </li>
               <li>
-                <Link to="/price-list">Price List (PDF &amp; Print)</Link>
+                <Link to="/price-list">Price List</Link>
               </li>
               <li>
-                <Link to="/contact">Contact &amp; Showroom Location</Link>
-              </li>
-              <li>
-                <Link to="/about#safety">Safety Guidelines &amp; Dos/Don'ts</Link>
+                <Link to="/contact">Contact</Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Cracker Categories */}
-          <div className="footer-col">
-            <h4 className="footer-heading">Top Categories</h4>
-            <ul className="footer-links">
-              <li>
-                <Link to="/quick-shopping?category=flower-pots">Flower Pots (Anar)</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=sparklers">Sparklers (Phuljhadi)</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=ground-chakkars">Ground Chakkars (Wheels)</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=rockets">Sky Rockets &amp; Bombs</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=fountains">Peacock Fountains &amp; Cones</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=gift-boxes">Mega Family Gift Boxes</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=fancy-crackers">Fancy Aerial Multi-Shots</Link>
-              </li>
-              <li>
-                <Link to="/quick-shopping?category=kids-special">Kids Safe Novelties</Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Col 4: Contact & Factory Details */}
+          {/* Col 3: Contact & Factory Details */}
           <div className="footer-col contact-col">
             <h4 className="footer-heading">Sivakasi Contact</h4>
             <div className="footer-contact-info">
@@ -186,13 +103,6 @@ const Footer = () => {
           <p className="copyright">
             © {currentYear} New Crackers Sivakasi. All Rights Reserved. Crafted with <Heart size={14} className="heart-icon" /> for a Happy and Safe Diwali!
           </p>
-          <div className="payment-badges">
-            <span className="pay-tag">UPI</span>
-            <span className="pay-tag">GPay</span>
-            <span className="pay-tag">PhonePe</span>
-            <span className="pay-tag">Net Banking</span>
-            <span className="pay-tag">Safe Transport</span>
-          </div>
         </div>
       </div>
     </footer>
