@@ -325,20 +325,40 @@ const Navbar = () => {
             </form>
 
             <nav className="mobile-links">
-              <NavLink to="/" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>
+              <NavLink
+                to="/"
+                className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Home
               </NavLink>
-              <NavLink to="/about" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>
+              <NavLink
+                to="/about"
+                className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 About Us
               </NavLink>
-              <NavLink to="/quick-shopping" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>
+              <NavLink
+                to="/quick-shopping"
+                className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Quick Shopping
                 <span className="mobile-hot-pill">Sale 70% Off</span>
               </NavLink>
-              <NavLink to="/price-list" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>
+              <NavLink
+                to="/price-list"
+                className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Price List (View &amp; Print)
               </NavLink>
-              <NavLink to="/contact" className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) => `mobile-link ${isActive ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 Contact &amp; Support
               </NavLink>
             </nav>

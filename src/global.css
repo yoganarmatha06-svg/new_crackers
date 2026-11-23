@@ -267,6 +267,30 @@ button {
   padding: 0 20px;
 }
 
+@media (max-width: 768px) {
+  .gold-stripe-divider {
+    margin: 22px auto;
+    padding: 0 16px;
+  }
+  .gold-stripe-divider .stripe-center-badge {
+    margin: 0 10px;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gold-stripe-divider {
+    margin: 14px auto;
+    padding: 0 10px;
+  }
+  .gold-stripe-divider .stripe-center-badge {
+    margin: 0 8px;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+}
+
 .gold-stripe-divider::before,
 .gold-stripe-divider::after {
   content: '';

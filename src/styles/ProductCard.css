@@ -415,9 +415,92 @@
 }
 
 /* Responsive Breakpoints */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .card-body {
     padding: 10px 8px 12px 8px;
+  }
+
+  .product-name {
+    font-size: 0.88rem;
+    min-height: 2.5em;
+  }
+
+  .offer-price {
+    font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    height: auto;
+  }
+
+  .card-top-badges {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+  }
+
+  .card-top-badges .badge {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+  }
+
+  .card-body {
+    padding: 8px 6px 10px 6px;
+  }
+
+  .card-meta {
+    margin-bottom: 4px;
+  }
+
+  .product-category {
+    font-size: 0.66rem;
+  }
+
+  .product-rating {
+    font-size: 0.7rem;
+  }
+
+  .star-icon {
+    width: 11px;
+    height: 11px;
+  }
+
+  .product-name {
+    font-size: 0.82rem;
+    min-height: auto;
+    margin-bottom: 2px;
+    line-height: 1.25;
+  }
+
+  .product-unit {
+    font-size: 0.68rem;
+    margin-bottom: 6px;
+  }
+
+  .product-pricing {
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+  }
+
+  .price-box {
+    gap: 4px;
+  }
+
+  .offer-price {
+    font-size: 1.05rem;
+  }
+
+  .mrp-price {
+    font-size: 0.72rem;
+  }
+
+  .savings-pill {
+    font-size: 0.6rem;
+    padding: 1px 4px;
   }
 
   .card-actions {
@@ -425,37 +508,65 @@
   }
 
   .qty-selector {
-    flex: 0 0 64px;
-    width: 64px;
-    height: 36px;
+    flex: 0 0 58px;
+    width: 58px;
+    height: 34px;
     padding: 0 2px;
   }
 
   .qty-btn {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 
   .qty-value {
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     min-width: 14px;
   }
 
   .product-card .add-cart-btn {
-    height: 36px;
-    font-size: 0.74rem;
+    height: 34px;
+    font-size: 0.72rem;
     padding: 0 4px;
     gap: 3px;
+    letter-spacing: 0;
   }
 
   .product-card .add-cart-btn .cart-btn-icon {
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
   }
 
   .btn-card-view-details {
+    height: 30px;
+    font-size: 0.72rem;
+    margin-top: 5px;
+    padding: 0 6px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card-body {
+    padding: 6px 4px 8px 4px;
+  }
+
+  .product-name {
+    font-size: 0.78rem;
+  }
+
+  .qty-selector {
+    flex: 0 0 50px;
+    width: 50px;
     height: 32px;
-    font-size: 0.74rem;
-    margin-top: 6px;
+  }
+
+  .qty-value {
+    font-size: 0.72rem;
+    min-width: 12px;
+  }
+
+  .product-card .add-cart-btn {
+    height: 32px;
+    font-size: 0.68rem;
   }
 }

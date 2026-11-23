@@ -230,3 +230,24 @@
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 35px 0 45px 0;
+  }
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+  .hero-highlights {
+    flex-direction: column;
+    width: 100%;
+  }
+  .highlight-pill {
+    width: 100%;
+    justify-content: center;
+  }
+}

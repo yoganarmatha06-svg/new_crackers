@@ -381,3 +381,59 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .modal-backdrop {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-height: 94vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .modal-image-box {
+    padding: 18px;
+  }
+
+  .modal-product-img {
+    max-height: 180px;
+  }
+
+  .modal-details {
+    padding: 16px 14px;
+  }
+
+  .modal-title {
+    font-size: 1.35rem;
+    margin-bottom: 8px;
+  }
+
+  .modal-offer-price {
+    font-size: 1.5rem;
+  }
+
+  .modal-actions-row {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .modal-qty-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .modal-add-btn,
+  .modal-buy-now-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

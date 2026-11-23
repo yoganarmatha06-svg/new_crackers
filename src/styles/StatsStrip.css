@@ -200,6 +200,21 @@
   }
 }
 
+@media (max-width: 480px) {
+  .stats-strip {
+    padding: 18px 0;
+  }
+  .stats-container {
+    gap: 14px;
+  }
+  .stat-num {
+    font-size: 1.85rem;
+  }
+  .stat-label {
+    font-size: 0.78rem;
+  }
+}
+
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   .stat-card {

@@ -79,7 +79,9 @@
   border: 1px solid rgba(255, 193, 7, 0.25);
   border-radius: var(--radius-full);
   padding: 6px 16px;
-  min-width: 320px;
+  min-width: 0;
+  width: 100%;
+  max-width: 360px;
 }
 
 .controls-search-box .search-icon {
@@ -361,5 +363,43 @@
   .table-thumb {
     width: 32px !important;
     height: 32px !important;
+  }
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .pricelist-hero {
+    padding: 40px 0 25px 0;
+  }
+
+  .pricelist-title {
+    font-size: 2rem;
+  }
+
+  .pricelist-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls-search-box {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .controls-filter-box {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pricelist-summary-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .table-responsive-wrapper {
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
   }
 }

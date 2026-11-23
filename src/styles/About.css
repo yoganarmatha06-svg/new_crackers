@@ -450,3 +450,35 @@
   gap: 16px;
   flex-wrap: wrap;
 }
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 50px 0 35px 0;
+  }
+
+  .about-hero-title {
+    font-size: 2rem;
+  }
+
+  .story-metrics {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-cta-card {
+    padding: 28px 18px;
+  }
+
+  .about-cta-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .cta-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-btns .btn {
+    width: 100%;
+  }
+}
