@@ -1,10 +1,11 @@
 /* ==========================================================
    DIWALI FEATURES / WHY CHOOSE US - SCROLL ANIMATED SHOWCASE
+   (4-Direction Flying-in Entrance Animation from 4 Sides)
    ========================================================== */
 
 .diwali-features-section {
   background: radial-gradient(circle at center, #ffffff 0%, #fffcf2 45%, #fff6e0 100%);
-  padding: 60px 0 75px;
+  padding: 65px 0 85px;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(245, 158, 11, 0.2);
@@ -25,7 +26,7 @@
   z-index: 0;
 }
 
-/* Section Header (Light Theme Harmonization) */
+/* Section Header */
 .diwali-features-header {
   text-align: center;
   margin-bottom: 45px;
@@ -51,7 +52,7 @@
 }
 
 .diwali-features-header .section-title {
-  font-size: 2.5rem;
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
   font-weight: 900;
   letter-spacing: -0.5px;
   margin-bottom: 10px;
@@ -63,58 +64,77 @@
 }
 
 .diwali-features-header .section-subtitle {
-  font-size: 1.02rem;
+  font-size: clamp(0.88rem, 2vw, 1.02rem);
   color: #475569;
   max-width: 620px;
   margin: 0 auto;
   line-height: 1.6;
+  padding: 0 15px;
 }
 
-/* Container sizing for generous, wide spacing */
+/* Container */
 .diwali-features-section .container {
   max-width: 1400px;
   width: 100%;
-  padding: 0 clamp(20px, 3vw, 50px);
+  padding: 0 clamp(8px, 3vw, 50px);
+  box-sizing: border-box;
 }
 
-/* 3-Column Interactive Layout - Spread out with ~4 inch breathing room */
+/* ==========================================================
+   4-DIRECTION INTERACTIVE GRID
+   (Left 1fr, Center auto, Right 1fr across all viewports)
+   ========================================================== */
 .diwali-features-grid {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "quality    center price"
+    "safe       center satisfaction";
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(80px, 10vw, 160px);
+  justify-content: center;
+  column-gap: clamp(12px, 4.5vw, 110px);
+  row-gap: clamp(16px, 4vw, 56px);
   position: relative;
   z-index: 1;
-  max-width: 1360px;
+  max-width: 1320px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Left & Right Columns (Pushed outward to sides away from center image) */
-.features-col {
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+/* Grid Area Assignments */
+.feature-quality {
+  grid-area: quality;
+  justify-self: center;
 }
 
-.features-col-left {
-  align-items: flex-start;
-  padding-left: clamp(10px, 3vw, 40px);
+.feature-safe {
+  grid-area: safe;
+  justify-self: center;
 }
 
-.features-col-right {
-  align-items: flex-end;
-  padding-right: clamp(10px, 3vw, 40px);
-}
-
-/* Center Image Column */
-.features-col-center {
+.feature-center-art {
+  grid-area: center;
+  justify-self: center;
+  align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 4px;
 }
 
+.feature-price {
+  grid-area: price;
+  justify-self: center;
+}
+
+.feature-satisfaction {
+  grid-area: satisfaction;
+  justify-self: center;
+}
+
+/* Center Fireworks Artwork */
 .diwali-center-art-wrap {
   position: relative;
   display: flex;
@@ -130,12 +150,14 @@
   height: auto;
   display: block;
   object-fit: contain;
+  margin: 0 auto;
   filter: drop-shadow(0 14px 28px rgba(180, 83, 9, 0.18));
 }
 
-/* Feature Block Styling (Clean Layout without Container Boxes) */
+/* Feature Block Styling */
 .feature-block {
   max-width: 310px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -144,23 +166,17 @@
   background: transparent;
   border: none;
   box-shadow: none;
-  backdrop-filter: none;
-  transition: transform 0.3s ease;
-}
-
-.feature-block:hover {
-  transform: translateY(-4px);
-  box-shadow: none;
-  border-color: transparent;
+  box-sizing: border-box;
 }
 
 .feature-icon-wrap {
-  width: 72px;
-  height: 72px;
+  width: clamp(48px, 6vw, 76px);
+  height: clamp(48px, 6vw, 76px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1.2vw, 12px);
+  overflow: visible;
   transition: transform 0.3s ease;
 }
 
@@ -171,193 +187,286 @@
 .feature-icon-img {
   max-width: 100%;
   max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
+  display: block;
 }
 
 .feature-title {
-  font-size: 1.45rem;
+  font-size: clamp(1rem, 2vw, 1.45rem);
   font-weight: 800;
   color: #dc2626;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
   line-height: 1.2;
   letter-spacing: -0.3px;
 }
 
 .feature-desc {
-  font-size: 0.92rem;
+  font-size: clamp(0.74rem, 1.2vw, 0.92rem);
   color: #475569;
-  line-height: 1.55;
+  line-height: 1.48;
   margin: 0;
   font-weight: 500;
 }
 
 /* ==========================================================
-   SCROLL-TRIGGERED 4-DIRECTION CORNER / SIDE ANIMATIONS
-   (Triggers precisely when user scrolls to this place)
+   SCROLL-TRIGGERED 4-DIRECTION FLY-IN ANIMATIONS
+   - Quality: Flies in from Top-Left
+   - Safe to Use: Flies in from Bottom-Left
+   - Genuine Price: Flies in from Top-Right
+   - Customer Satisfaction: Flies in from Bottom-Right
+   - Center Fireworks Image: Scales up from Center
    ========================================================== */
 
-/* Base Transition for fast, clean reset when scrolling away */
-.diwali-center-art-wrap,
-.feature-top-left,
-.feature-bottom-left,
-.feature-top-right,
-.feature-bottom-right {
-  transition: opacity 0.35s ease-out, transform 0.35s ease-out;
-}
-
-/* 1. Center Diwali Artwork: Fade-in + Scale-up */
+/* 1. Center Fireworks Image: Initial state offscreen */
 .diwali-center-art-wrap {
   opacity: 0;
-  transform: scale(0.65);
+  transform: scale(0.35);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   will-change: transform, opacity;
 }
 
-.diwali-features-section.is-animated .diwali-center-art-wrap {
+.is-animated .diwali-center-art-wrap {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s,
+              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
 }
 
-/* 2. Side 1 - Top-Left (Quality): Flies in from Top-Left */
-.feature-top-left {
+/* 2. Top-Left: Quality (Flies in from Top-Left) */
+.feature-quality {
   opacity: 0;
-  transform: translate(-180px, -100px);
+  transform: translate(-160px, -70px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   will-change: transform, opacity;
 }
 
-.diwali-features-section.is-animated .feature-top-left {
+.is-animated .feature-quality {
   opacity: 1;
   transform: translate(0, 0);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
 }
 
-/* 3. Side 2 - Bottom-Left (Safe to Use): Flies in from Bottom-Left */
-.feature-bottom-left {
+/* 3. Bottom-Left: Safe to Use (Flies in from Bottom-Left) */
+.feature-safe {
   opacity: 0;
-  transform: translate(-180px, 100px);
+  transform: translate(-160px, 70px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   will-change: transform, opacity;
 }
 
-.diwali-features-section.is-animated .feature-bottom-left {
+.is-animated .feature-safe {
   opacity: 1;
   transform: translate(0, 0);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s,
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
 }
 
-/* 4. Side 3 - Top-Right (Genuine Price): Flies in from Top-Right */
-.feature-top-right {
+/* 4. Top-Right: Genuine Price (Flies in from Top-Right) */
+.feature-price {
   opacity: 0;
-  transform: translate(180px, -100px);
+  transform: translate(160px, -70px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   will-change: transform, opacity;
 }
 
-.diwali-features-section.is-animated .feature-top-right {
+.is-animated .feature-price {
   opacity: 1;
   transform: translate(0, 0);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s,
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.12s;
 }
 
-/* 5. Side 4 - Bottom-Right (Customer Satisfaction): Flies in from Bottom-Right */
-.feature-bottom-right {
+/* 5. Bottom-Right: Customer Satisfaction (Flies in from Bottom-Right) */
+.feature-satisfaction {
   opacity: 0;
-  transform: translate(180px, 100px);
+  transform: translate(160px, 70px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   will-change: transform, opacity;
 }
 
-.diwali-features-section.is-animated .feature-bottom-right {
+.is-animated .feature-satisfaction {
   opacity: 1;
   transform: translate(0, 0);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s,
-              transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s,
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.22s;
 }
 
 /* ==========================================================
-   RESPONSIVE BREAKPOINTS
+   TABLET RESPONSIVENESS (1024px down to 769px)
    ========================================================== */
+@media (max-width: 1024px) {
+  .diwali-features-section {
+    padding: 55px 0 70px;
+  }
 
-@media (max-width: 1040px) {
   .diwali-features-grid {
-    gap: 36px;
+    column-gap: clamp(16px, 4vw, 50px);
+    row-gap: 36px;
   }
-  .features-col-left {
-    align-items: center;
-    padding-left: 0;
-  }
-  .features-col-right {
-    align-items: center;
-    padding-right: 0;
-  }
+
   .diwali-center-img {
-    max-width: 290px;
+    max-width: 280px;
   }
+
   .feature-block {
-    max-width: 270px;
+    max-width: 240px;
+  }
+}
+
+/* ==========================================================
+   MOBILE VIEW (<= 768px down to 320px)
+   - 4-Corner Layout around Center Image
+   - Distinct 4-Direction Fly-in from all 4 sides on scroll!
+   ========================================================== */
+@media (max-width: 768px) {
+  .diwali-features-section {
+    padding: 42px 0 54px;
+  }
+
+  .diwali-features-header {
+    margin-bottom: 24px;
+  }
+
+  .diwali-features-grid {
+    column-gap: clamp(6px, 2.4vw, 18px);
+    row-gap: clamp(14px, 3.5vw, 24px);
+    max-width: 100%;
+    padding: 0 4px;
+  }
+
+  .diwali-center-art-wrap {
+    max-width: clamp(125px, 34vw, 210px);
+  }
+
+  .diwali-center-img {
+    max-width: 100%;
+    filter: drop-shadow(0 8px 18px rgba(180, 83, 9, 0.2));
+  }
+
+  .feature-block {
+    max-width: clamp(98px, 28vw, 160px);
+  }
+
+  .feature-icon-wrap {
+    width: clamp(40px, 9vw, 54px);
+    height: clamp(40px, 9vw, 54px);
+    margin-bottom: 6px;
+  }
+
+  .feature-title {
+    font-size: clamp(0.9rem, 2.7vw, 1.15rem);
+    margin-bottom: 3px;
+  }
+
+  .feature-desc {
+    font-size: clamp(0.68rem, 2vw, 0.8rem);
+    line-height: 1.35;
+  }
+
+  /* 4-Direction Fly-in on Mobile Screens */
+  .feature-quality {
+    transform: translate(-100px, -45px);
+  }
+
+  .feature-safe {
+    transform: translate(-100px, 45px);
+  }
+
+  .feature-price {
+    transform: translate(100px, -45px);
+  }
+
+  .feature-satisfaction {
+    transform: translate(100px, 45px);
+  }
+
+  .is-animated .feature-quality,
+  .is-animated .feature-safe,
+  .is-animated .feature-price,
+  .is-animated .feature-satisfaction {
+    transform: translate(0, 0);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .is-animated .feature-quality,
+  .is-animated .feature-price {
+    transition-delay: 0.12s;
+  }
+
+  .is-animated .feature-safe,
+  .is-animated .feature-satisfaction {
+    transition-delay: 0.22s;
+  }
+}
+
+/* Extra Small Mobile (<= 380px down to 320px) */
+@media (max-width: 380px) {
+  .diwali-features-section {
+    padding: 34px 0 44px;
+  }
+
+  .diwali-features-grid {
+    column-gap: 5px;
+    row-gap: 12px;
     padding: 0;
   }
-  .feature-title {
-    font-size: 1.3rem;
-  }
-  .feature-desc {
-    font-size: 0.88rem;
-  }
-}
 
-@media (max-width: 860px) {
-  .diwali-features-section {
-    padding: 50px 0 60px;
-  }
-
-  .diwali-features-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  /* Center Image placed at top on mobile */
-  .features-col-center {
-    order: -1;
-    margin-bottom: 10px;
-  }
-
-  .diwali-center-img {
-    max-width: 260px;
-  }
-
-  .features-col {
-    gap: 24px;
-    align-items: center;
+  .diwali-center-art-wrap {
+    max-width: 105px;
   }
 
   .feature-block {
-    max-width: 440px;
-    width: 100%;
+    max-width: 94px;
   }
 
-  /* Mobile Animation transforms adapted for vertical flow */
-  .feature-top-left {
-    transform: translateX(-40px);
+  .feature-icon-wrap {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 4px;
   }
 
-  .feature-bottom-left {
-    transform: translateX(-40px);
+  .feature-title {
+    font-size: 0.8rem;
+    margin-bottom: 2px;
   }
 
-  .feature-top-right {
-    transform: translateX(40px);
+  .feature-desc {
+    font-size: 0.64rem;
+    line-height: 1.25;
   }
 
-  .feature-bottom-right {
-    transform: translateX(40px);
+  /* 4-Direction Fly-in on 320px screens */
+  .feature-quality {
+    transform: translate(-70px, -30px);
+  }
+
+  .feature-safe {
+    transform: translate(-70px, 30px);
+  }
+
+  .feature-price {
+    transform: translate(70px, -30px);
+  }
+
+  .feature-satisfaction {
+    transform: translate(70px, 30px);
   }
 }
 
-/* Accessibility / Reduced Motion */
+/* ==========================================================
+   ACCESSIBILITY / REDUCED MOTION PREFERENCE
+   ========================================================== */
 @media (prefers-reduced-motion: reduce) {
   .diwali-center-art-wrap,
-  .feature-block {
+  .feature-block,
+  .feature-quality,
+  .feature-safe,
+  .feature-price,
+  .feature-satisfaction {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
