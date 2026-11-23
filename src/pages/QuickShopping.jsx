@@ -24,8 +24,36 @@ const QuickShopping = () => {
   const initialCategory = searchParams.get('category') || 'all';
   const initialSearch = searchParams.get('search') || '';
 
+  // Normalize category slugs for alias support (e.g. rocket -> rockets, sky-shot/fancy-crackers -> sky-shots)
+  const normalizeCategory = (slug) => {
+    if (!slug || slug === 'all') return 'all';
+    const s = slug.toLowerCase();
+    if (s === 'rocket' || s === 'rockets') return 'rockets';
+    if (
+      s === 'classic-bomb' ||
+      s === 'classic-bombs' ||
+      s === 'bomb' ||
+      s === 'bombs' ||
+      s === 'sound-crackers' ||
+      s === 'sound'
+    ) {
+      return 'classic-bombs';
+    }
+    if (
+      s === 'sky-shot' ||
+      s === 'skyshot' ||
+      s === 'sky-shots' ||
+      s === 'skyshots' ||
+      s === 'fancy-crackers' ||
+      s === 'fancy'
+    ) {
+      return 'sky-shots';
+    }
+    return slug;
+  };
+
   const [searchTerm, setSearchTerm] = useState(initialSearch);
-  const [selectedCategory, setSelectedCategory] = useState(initialCategory);
+  const [selectedCategory, setSelectedCategory] = useState(() => normalizeCategory(initialCategory));
   const [sortBy, setSortBy] = useState('featured');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
@@ -35,7 +63,7 @@ const QuickShopping = () => {
   useEffect(() => {
     const cat = searchParams.get('category');
     if (cat) {
-      setSelectedCategory(cat);
+      setSelectedCategory(normalizeCategory(cat));
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     const q = searchParams.get('search');
@@ -44,15 +72,18 @@ const QuickShopping = () => {
     }
   }, [searchParams]);
 
-  const currentCategoryObj = categories.find((c) => c.slug === selectedCategory);
+  const currentCategoryObj =
+    categories.find((c) => c.slug === selectedCategory) ||
+    (selectedCategory === 'fancy-crackers' ? categories.find((c) => c.slug === 'sky-shots') : null);
 
   const handleCategoryChange = (slug) => {
-    setSelectedCategory(slug);
-    if (slug === 'all') {
+    const norm = normalizeCategory(slug);
+    setSelectedCategory(norm);
+    if (norm === 'all') {
       searchParams.delete('category');
       setSearchParams(searchParams);
     } else {
-      setSearchParams({ category: slug });
+      setSearchParams({ category: norm });
     }
   };
 
@@ -60,8 +91,34 @@ const QuickShopping = () => {
   const filteredProducts = useMemo(() => {
     return products
       .filter((product) => {
-        const matchesCategory =
-          selectedCategory === 'all' || product.categorySlug === selectedCategory;
+        let matchesCategory = selectedCategory === 'all';
+        if (!matchesCategory) {
+          if (selectedCategory === 'rockets') {
+            matchesCategory =
+              product.categorySlug === 'rockets' ||
+              product.categorySlug === 'rocket' ||
+              product.category === 'Rocket' ||
+              product.category === 'Rockets';
+          } else if (selectedCategory === 'classic-bombs') {
+            matchesCategory =
+              product.categorySlug === 'classic-bombs' ||
+              product.categorySlug === 'bomb' ||
+              product.categorySlug === 'bombs' ||
+              product.category === 'Classic Bomb' ||
+              product.category === 'Classic Bombs' ||
+              product.name.toLowerCase().includes('bomb');
+          } else if (selectedCategory === 'sky-shots') {
+            matchesCategory =
+              product.categorySlug === 'sky-shots' ||
+              product.categorySlug === 'sky-shot' ||
+              product.categorySlug === 'fancy-crackers' ||
+              product.category === 'Sky Shot' ||
+              product.category === 'Sky Shots' ||
+              product.category === 'Fancy Crackers';
+          } else {
+            matchesCategory = product.categorySlug === selectedCategory;
+          }
+        }
         const matchesSearch =
           product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
           product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||

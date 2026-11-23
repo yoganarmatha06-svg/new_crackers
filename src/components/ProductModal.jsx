@@ -1,13 +1,48 @@
 import React, { useState } from 'react';
-import { X, ShoppingCart, Star, ShieldCheck, Volume2, Plus, Minus, CheckCircle, AlertTriangle, Zap } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { X, ShoppingCart, Star, ShieldCheck, Volume2, Plus, Minus, CheckCircle, AlertTriangle, Zap, ArrowRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import '../styles/ProductModal.css';
 
 const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
 
+  const navigate = useNavigate();
   const [qty, setQty] = useState(1);
   const { addToCart, openCart } = useCart();
+
+  const handleCategoryExplore = () => {
+    let slug = 'flower-pots';
+    const cat = (product.category || '').toLowerCase();
+    const catSlug = (product.categorySlug || '').toLowerCase();
+    const prodName = (product.name || '').toLowerCase();
+
+    if (cat.includes('rocket') || catSlug.includes('rocket')) {
+      slug = 'rockets';
+    } else if (
+      cat.includes('bomb') ||
+      catSlug.includes('bomb') ||
+      prodName.includes('bomb')
+    ) {
+      slug = 'classic-bombs';
+    } else if (
+      cat.includes('sky shot') ||
+      catSlug === 'sky-shots' ||
+      catSlug === 'sky-shot' ||
+      catSlug === 'fancy-crackers'
+    ) {
+      slug = 'sky-shots';
+    } else if (cat.includes('sparkler') || catSlug.includes('sparkler')) {
+      slug = 'sparklers';
+    } else if (cat.includes('chakkar') || catSlug.includes('chakkar')) {
+      slug = 'ground-chakkars';
+    } else if (product.categorySlug) {
+      slug = product.categorySlug;
+    }
+    navigate(`/quick-shopping?category=${slug}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (onClose) onClose();
+  };
 
   const discountPercent = Math.round(
     ((product.price - product.offerPrice) / product.price) * 100
@@ -56,7 +91,17 @@ const ProductModal = ({ product, onClose }) => {
 
           {/* Right: Details */}
           <div className="modal-details">
-            <div className="modal-category">{product.category}</div>
+            <div
+              className="modal-category"
+              onClick={handleCategoryExplore}
+              style={{ cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+              title={`Explore all ${product.category} in Quick Shopping`}
+            >
+              <span>{product.category}</span>
+              <span style={{ fontSize: '0.8rem', opacity: 0.85, fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
+                • Explore in Quick Shopping <ArrowRight size={12} />
+              </span>
+            </div>
             <h2 className="modal-title">{product.name}</h2>
 
             {/* Ratings & Stock */}

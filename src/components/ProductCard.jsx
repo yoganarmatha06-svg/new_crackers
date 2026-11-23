@@ -80,7 +80,18 @@ const ProductCard = ({ product, onQuickView, onCardClick, hideCart = false }) =>
       {/* Product Info */}
       <div className="card-body">
         <div className="card-meta">
-          <span className="product-category">{product.category}</span>
+          <span
+            className="product-category"
+            onClick={(e) => {
+              if (onCardClick) {
+                e.stopPropagation();
+                onCardClick(product);
+              }
+            }}
+            title={onCardClick ? `View ${product.category} in Quick Shopping` : undefined}
+          >
+            {product.category}
+          </span>
           <div className="product-rating">
             <Star size={13} className="star-icon" />
             <span>{product.rating}</span>

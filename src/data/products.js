@@ -6,6 +6,9 @@ import deluxeGiantImg from '../assets/deluxe-giant.jpg';
 import triColorImg from '../assets/tri-color.jpg';
 import rocketImg from '../assets/rocket.jpg';
 import shotImg from '../assets/shot.jpg';
+import sparklers15cmImg from '../assets/15cm.jpg';
+import classicBombImg from '../assets/bomb.jpg';
+import groundChakkarImg from '../assets/ground chkara.jpg';
 
 export const products = [
   // ==========================================
@@ -73,9 +76,9 @@ export const products = [
   },
   {
     id: 25,
-    name: "Colour Koti Deluxe Anar",
+    name: "Colour Koti Deluxe Sky Rocket",
     category: "Rocket",
-    categorySlug: "flower-pots",
+    categorySlug: "rockets",
     price: 420,
     offerPrice: 140,
     unit: "1 Box (10 Pcs)",
@@ -93,9 +96,9 @@ export const products = [
   },
   {
     id: 26,
-    name: "Super Gold Sparkle Anar",
+    name: "Super Gold Aerial Sky Shot",
     category: "Sky Shot",
-    categorySlug: "flower-pots",
+    categorySlug: "sky-shots",
     price: 390,
     offerPrice: 130,
     unit: "1 Box (5 Pcs)",
@@ -127,7 +130,7 @@ export const products = [
     inStock: true,
     rating: 4.7,
     reviewsCount: 220,
-    image: "/images/products/sparklers-gold-15cm.svg",
+    image: sparklers15cmImg,
     description: "Bright golden sparks with steady flame duration of 60 seconds per stick. Child-safe wooden base handle.",
     soundLevel: "Silent",
     isFeatured: true,
@@ -137,43 +140,43 @@ export const products = [
   },
   {
     id: 5,
-    name: "30 cm Colour Sparklers",
-    category: "Sparklers",
-    categorySlug: "sparklers",
+    name: "Classic Bomb",
+    category: "Classic Bomb",
+    categorySlug: "classic-bombs",
     price: 320,
     offerPrice: 110,
-    unit: "1 Box (10 Sticks)",
+    unit: "1 Box (10 Pcs)",
     availableQty: 420,
     inStock: true,
     rating: 4.9,
     reviewsCount: 185,
-    image: "/images/products/sparklers-colour-30cm.svg",
-    description: "Multi-color assorted sparkling sticks radiating vivid crimson red, peacock green, and celestial blue lights.",
-    soundLevel: "Silent",
-    isFeatured: false,
+    image: classicBombImg,
+    description: "Authentic Sivakasi Gowsalya Classic Bomb with loud celebratory sound, tested under green cracker decibel standards.",
+    soundLevel: "High Bang",
+    isFeatured: true,
     isBestseller: true,
     isGreenCracker: true,
-    safetyTips: "Light only one sparkler at a time. Keep water bucket nearby."
+    safetyTips: "Place on open ground outdoors. Light fuse at arm's length and move away immediately."
   },
   {
     id: 6,
-    name: "50 cm Mega Giant Sparklers",
-    category: "Sparklers",
-    categorySlug: "sparklers",
-    price: 580,
-    offerPrice: 195,
-    unit: "1 Box (5 Sticks)",
-    availableQty: 260,
+    name: "Special Asoka Ground Chakkar",
+    category: "Ground Chakkar",
+    categorySlug: "ground-chakkars",
+    price: 360,
+    offerPrice: 120,
+    unit: "1 Box (10 Pcs)",
+    availableQty: 350,
     inStock: true,
-    rating: 5.0,
-    reviewsCount: 86,
-    image: "/images/products/sparklers-electric-50cm.svg",
-    description: "Super-sized half-meter sparklers that burn for over 3 minutes with dense cascade of brilliant silver showers.",
-    soundLevel: "Silent",
+    rating: 4.9,
+    reviewsCount: 168,
+    image: groundChakkarImg,
+    description: "Authentic SKV Pyros Asoka Ground Chakkar with rapid spinning motion and dazzling circular golden and multi-color sparks.",
+    soundLevel: "Whirring Sound",
     isFeatured: true,
-    isBestseller: false,
+    isBestseller: true,
     isGreenCracker: true,
-    safetyTips: "Requires adult supervision. Do not touch glowing tip."
+    safetyTips: "Place flat on smooth level ground outdoors. Light side fuse and step back 5 meters."
   },
   {
     id: 27,
@@ -633,13 +636,13 @@ export const products = [
   },
 
   // ==========================================
-  // 7. FANCY CRACKERS (வான வேடிக்கை) - 5 Products
+  // 7. SKY SHOTS (வான வேடிக்கை) - 5 Products
   // ==========================================
   {
     id: 19,
     name: "Classic 1000 Wala Festive Garland",
-    category: "Fancy Crackers",
-    categorySlug: "fancy-crackers",
+    category: "Classic Bombs",
+    categorySlug: "classic-bombs",
     price: 1200,
     offerPrice: 420,
     unit: "1 Long String Box",
@@ -650,7 +653,7 @@ export const products = [
     image: "/images/products/garland-1000-wala.svg",
     description: "Traditional continuous rhythm red paper crackers tested for permissible decibel levels under green cracker norms.",
     soundLevel: "High Rhythmic",
-    isFeatured: false,
+    isFeatured: true,
     isBestseller: true,
     isGreenCracker: true,
     safetyTips: "Spread out completely on open ground. Keep pets and children indoors."
@@ -658,8 +661,8 @@ export const products = [
   {
     id: 20,
     name: "12 Shots Multi-Colour Aerial Repeater",
-    category: "Fancy Crackers",
-    categorySlug: "fancy-crackers",
+    category: "Sky Shots",
+    categorySlug: "sky-shots",
     price: 950,
     offerPrice: 320,
     unit: "1 Multi-Shot Cake",
@@ -678,8 +681,8 @@ export const products = [
   {
     id: 21,
     name: "30 Shots Grand Sky Symphony",
-    category: "Fancy Crackers",
-    categorySlug: "fancy-crackers",
+    category: "Sky Shots",
+    categorySlug: "sky-shots",
     price: 2100,
     offerPrice: 699,
     unit: "1 Giant Cake",
@@ -698,8 +701,8 @@ export const products = [
   {
     id: 37,
     name: "2000 Wala Mega Festival Garland",
-    category: "Fancy Crackers",
-    categorySlug: "fancy-crackers",
+    category: "Classic Bombs",
+    categorySlug: "classic-bombs",
     price: 2400,
     offerPrice: 799,
     unit: "1 Long String Box",
@@ -710,7 +713,7 @@ export const products = [
     image: "/images/products/garland-1000-wala.svg",
     description: "Grand Sivakasi celebration garland with crisp rhythmic reports and eco-friendly paper packaging.",
     soundLevel: "High Festive",
-    isFeatured: false,
+    isFeatured: true,
     isBestseller: false,
     isGreenCracker: true,
     safetyTips: "Lay out on dry ground away from vehicles."
@@ -718,8 +721,8 @@ export const products = [
   {
     id: 38,
     name: "60 Shots Titanium Aerial Cake",
-    category: "Fancy Crackers",
-    categorySlug: "fancy-crackers",
+    category: "Sky Shots",
+    categorySlug: "sky-shots",
     price: 3800,
     offerPrice: 1299,
     unit: "1 Master Box",

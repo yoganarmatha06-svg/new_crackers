@@ -93,7 +93,7 @@ const PriceList = () => {
             <button onClick={handlePrint} className="btn btn-gold btn-sm">
               <Printer size={16} /> Print Price List
             </button>
-            <button onClick={handleDownloadPDF} className="btn btn-secondary btn-sm">
+            <button onClick={handleDownloadPDF} className="btn btn-secondary btn-sm btn-download">
               <Download size={16} /> Download Price List (PDF)
             </button>
           </div>

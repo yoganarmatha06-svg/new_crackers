@@ -36,8 +36,8 @@ export const categories = [
     slug: "rockets",
     image: "/images/categories/rockets.svg",
     description: "High altitude screaming sky rockets that soar into the night sky with brilliant bursts.",
-    itemCount: "3 Varieties",
-    popular: false
+    itemCount: "5 Varieties",
+    popular: true
   },
   {
     id: 5,
@@ -61,13 +61,13 @@ export const categories = [
   },
   {
     id: 7,
-    name: "Fancy Crackers",
+    name: "Sky Shots",
     tamilName: "வான வேடிக்கை",
-    slug: "fancy-crackers",
+    slug: "sky-shots",
     image: "/images/categories/fancy-crackers.svg",
     description: "Sky shots, 12-shot repeaters, 30-shot aerial cakes, and traditional sound garlands.",
-    itemCount: "3 Varieties",
-    popular: false
+    itemCount: "5 Varieties",
+    popular: true
   },
   {
     id: 8,
@@ -76,6 +76,16 @@ export const categories = [
     slug: "kids-special",
     image: "/images/categories/kids-special.svg",
     description: "Safe, low-smoke, zero-sound novelties, pop-pops, serpent eggs, and magic lights.",
+    itemCount: "3 Varieties",
+    popular: true
+  },
+  {
+    id: 9,
+    name: "Classic Bombs",
+    tamilName: "வெடி / பாம்",
+    slug: "classic-bombs",
+    image: "/images/categories/classic-bombs.svg",
+    description: "High decibel festive sound crackers, classic atom bombs, hydro bombs, and continuous rhythm garlands.",
     itemCount: "3 Varieties",
     popular: true
   }

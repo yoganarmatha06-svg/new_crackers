@@ -33,15 +33,54 @@ const Home = () => {
   const [activeTab, setActiveTab] = useState('all');
 
   const handleCategoryCardClick = (product) => {
-    const slug = product?.categorySlug || 'flower-pots';
+    let slug = 'flower-pots';
+    if (!product) {
+      navigate('/quick-shopping');
+      return;
+    }
+
+    const cat = (product.category || '').toLowerCase();
+    const catSlug = (product.categorySlug || '').toLowerCase();
+    const prodName = (product.name || '').toLowerCase();
+
+    if (cat.includes('rocket') || catSlug.includes('rocket')) {
+      slug = 'rockets';
+    } else if (
+      cat.includes('bomb') ||
+      catSlug.includes('bomb') ||
+      prodName.includes('bomb')
+    ) {
+      slug = 'classic-bombs';
+    } else if (
+      cat.includes('sky shot') ||
+      catSlug === 'sky-shots' ||
+      catSlug === 'sky-shot' ||
+      catSlug === 'fancy-crackers'
+    ) {
+      slug = 'sky-shots';
+    } else if (cat.includes('sparkler') || catSlug.includes('sparkler')) {
+      slug = 'sparklers';
+    } else if (cat.includes('chakkar') || catSlug.includes('chakkar')) {
+      slug = 'ground-chakkars';
+    } else if (product.categorySlug) {
+      slug = product.categorySlug;
+    }
+
     navigate(`/quick-shopping?category=${slug}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Filter exactly 5 products for the selected category (no mixing)
+  // Exactly 5 Signature Products for "Our Products" Showcase:
+  // 1. Flower Pots, 2. Deluxe Giant Golden, 3. Tri-Colour, 4. Rocket, 5. Sky Shot
   const categoryProducts = useMemo(() => {
-    return products.filter((p) => p.categorySlug === selectedCategory).slice(0, 5);
-  }, [selectedCategory]);
+    const p1 = products.find((p) => p.id === 1);
+    const p2 = products.find((p) => p.id === 2);
+    const p3 = products.find((p) => p.id === 3);
+    const p4 = products.find((p) => p.id === 25 || p.category === 'Rocket' || p.categorySlug === 'rockets');
+    const p5 = products.find((p) => p.id === 26 || p.category === 'Sky Shot' || p.categorySlug === 'sky-shots');
+    const list = [p1, p2, p3, p4, p5].filter(Boolean);
+    return list.length === 5 ? list : products.slice(0, 5);
+  }, []);
 
   const activeCategory = categories.find((c) => c.slug === selectedCategory) || categories[0];
 

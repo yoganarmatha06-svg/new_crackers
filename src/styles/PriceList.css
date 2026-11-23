@@ -1,10 +1,12 @@
 /* ==========================================================
-   PRICE LIST PAGE STYLES
+   PRICE LIST PAGE STYLES (CLEAN WHITE FESTIVE THEME)
    ========================================================== */
 
 .pricelist-page {
   position: relative;
-  min-height: 80vh;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #334155;
 }
 
 /* Printable Header (Hidden on screen) */
@@ -16,8 +18,8 @@
 .pricelist-hero {
   padding: 60px 0 40px 0;
   text-align: center;
-  background: linear-gradient(180deg, #15082d 0%, #1a0b36 100%);
-  border-bottom: 1px solid rgba(255, 193, 7, 0.15);
+  background: linear-gradient(180deg, #faf5ff 0%, #f3e8ff 100%);
+  border-bottom: 2px solid #ffd700;
 }
 
 .pricelist-badge {
@@ -26,25 +28,28 @@
   gap: 6px;
   background: var(--grad-fire);
   color: #ffffff;
-  padding: 4px 14px;
+  padding: 5px 16px;
   border-radius: var(--radius-full);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 1px;
   margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
 }
 
 .pricelist-title {
   font-size: 2.8rem;
   font-weight: 900;
   margin-bottom: 12px;
+  color: #2b074a;
 }
 
 .pricelist-subtitle {
   font-size: 1.05rem;
-  color: var(--color-text-muted);
+  color: #64748b;
   max-width: 640px;
   margin: 0 auto 28px auto;
+  line-height: 1.6;
 }
 
 .pricelist-actions-row {
@@ -55,8 +60,29 @@
   flex-wrap: wrap;
 }
 
+/* Download Price List - Royal Purple Background */
+.pricelist-actions-row .btn-download,
+.pricelist-actions-row .btn-secondary {
+  background: linear-gradient(135deg, #7e22ce 0%, #4c1d95 100%);
+  border: 1.5px solid #ffd700;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(126, 34, 206, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.pricelist-actions-row .btn-download:hover,
+.pricelist-actions-row .btn-secondary:hover {
+  background: linear-gradient(135deg, #9333ea 0%, #581c87 100%);
+  color: #ffd700;
+  border-color: #fef08a;
+  box-shadow: 0 8px 24px rgba(126, 34, 206, 0.55), 0 0 12px rgba(255, 215, 0, 0.3);
+  transform: translateY(-2px);
+}
+
 /* Main Section */
 .pricelist-main-section {
+  background: #ffffff;
   padding-top: 36px;
   padding-bottom: 80px;
 }
@@ -75,17 +101,24 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 193, 7, 0.25);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-full);
-  padding: 6px 16px;
+  padding: 8px 18px;
   min-width: 0;
   width: 100%;
   max-width: 360px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.controls-search-box:focus-within {
+  border-color: #9333ea;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.15);
 }
 
 .controls-search-box .search-icon {
-  color: var(--color-gold);
+  color: #9333ea;
   margin-right: 10px;
 }
 
@@ -93,38 +126,48 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #ffffff;
+  color: #1e1b4b;
   font-size: 0.92rem;
   width: 100%;
+}
+
+.controls-search-input::placeholder {
+  color: #94a3b8;
 }
 
 .controls-filter-box {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 193, 7, 0.25);
-  padding: 6px 14px;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  padding: 8px 16px;
   border-radius: var(--radius-full);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: border-color var(--transition-fast);
+}
+
+.controls-filter-box:focus-within {
+  border-color: #9333ea;
 }
 
 .filter-icon {
-  color: var(--color-gold);
+  color: #9333ea;
 }
 
 .category-select {
   background: transparent;
   border: none;
   outline: none;
-  color: #ffffff;
+  color: #1e1b4b;
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
 }
 
 .category-select option {
-  background: #180d36;
-  color: #ffffff;
+  background: #ffffff;
+  color: #1e1b4b;
 }
 
 /* Summary Bar */
@@ -132,45 +175,48 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: var(--grad-card);
-  border: 1px solid rgba(255, 193, 7, 0.2);
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
   border-radius: var(--radius-md);
-  padding: 16px 20px;
+  padding: 18px 24px;
   margin-bottom: 24px;
   flex-wrap: wrap;
   gap: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .summary-col {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .summary-label {
-  color: var(--color-text-subtle);
+  color: #64748b;
+  font-weight: 500;
 }
 
 .summary-val {
-  color: #ffffff;
+  color: #1e1b4b;
+  font-weight: 700;
 }
 
 .summary-val.green {
-  color: #34d399;
+  color: #059669;
 }
 
 .summary-val.gold {
-  color: var(--color-gold-bright);
+  color: #b45309;
 }
 
 /* Responsive Table */
 .table-responsive-wrapper {
   overflow-x: auto;
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 193, 7, 0.25);
-  background: var(--grad-card);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   margin-bottom: 30px;
 }
 
@@ -182,30 +228,31 @@
 }
 
 .pricelist-table th {
-  background: #110524;
-  color: var(--color-gold);
+  background: #2b074a;
+  color: #ffd700;
   padding: 16px 14px;
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+  border-bottom: 3px solid #ffd700;
   white-space: nowrap;
 }
 
 .pricelist-table td {
-  padding: 12px 14px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 14px 14px;
+  border-bottom: 1px solid #f1f5f9;
   vertical-align: middle;
+  color: #334155;
 }
 
 .table-row:hover {
-  background: rgba(255, 255, 255, 0.03);
+  background: #faf5ff;
 }
 
 .td-sno {
   font-weight: 700;
-  color: var(--color-text-subtle);
+  color: #64748b;
   width: 45px;
 }
 
@@ -218,56 +265,61 @@
   height: 48px;
   object-fit: cover;
   border-radius: var(--radius-sm);
-  background: #0d061c;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
 }
 
 .product-table-title {
   display: block;
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   font-size: 0.92rem;
 }
 
 .table-green-tag {
   display: inline-block;
   font-size: 0.68rem;
-  color: #34d399;
-  font-weight: 600;
+  color: #059669;
+  font-weight: 700;
 }
 
 .table-cat-badge {
-  background: rgba(255, 255, 255, 0.06);
-  padding: 3px 8px;
+  background: #f3e8ff;
+  border: 1px solid #e9d5ff;
+  padding: 3px 10px;
   border-radius: var(--radius-full);
   font-size: 0.74rem;
-  color: var(--color-text-muted);
+  color: #7e22ce;
+  font-weight: 600;
   white-space: nowrap;
 }
 
 .td-unit {
-  font-size: 0.8rem;
-  color: var(--color-text-subtle);
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 500;
   white-space: nowrap;
 }
 
 .strikethrough {
   text-decoration: line-through;
-  color: var(--color-text-subtle);
+  color: #94a3b8;
   font-size: 0.84rem;
 }
 
 .highlight-price {
   font-size: 1.05rem;
-  color: var(--color-gold-bright);
+  color: #c2410c;
+  font-weight: 800;
 }
 
 .savings-tag {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 3px 8px;
+  background: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+  padding: 4px 10px;
   border-radius: var(--radius-full);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -280,44 +332,50 @@
 
 .table-qty-input {
   width: 48px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
   border-radius: 6px;
-  color: #ffffff;
-  padding: 4px;
+  color: #0f172a;
+  padding: 5px;
   text-align: center;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
+}
+
+.table-qty-input:focus {
+  border-color: #9333ea;
+  outline: none;
 }
 
 .table-add-btn {
-  padding: 6px 12px;
-  font-size: 0.78rem;
+  padding: 6px 14px;
+  font-size: 0.8rem;
   white-space: nowrap;
 }
 
 /* Printable Terms */
 .print-footer-notes {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 24px;
 }
 
 .print-footer-notes h4 {
   font-size: 0.95rem;
-  color: var(--color-gold);
+  color: #6b21a8;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 .print-footer-notes ul {
   list-style-type: square;
   padding-left: 20px;
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  color: #475569;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 /* Print Optimization */

@@ -82,14 +82,23 @@
   width: max-content;
   flex-wrap: nowrap;
   animation: announcementMarqueeScroll 38s linear infinite;
+  animation-play-state: running !important;
   will-change: transform;
 }
 
-/* Pause animation on hover (desktop only) */
-@media (hover: hover) and (pointer: fine) {
-  .announcement-bar:hover .announcement-marquee-track {
-    animation-play-state: paused;
-  }
+/* Continuous infinite marquee - strictly never pause on hover, focus, or click */
+.announcement-bar:hover .announcement-marquee-track,
+.announcement-bar:focus-within .announcement-marquee-track,
+.announcement-marquee-wrapper:hover .announcement-marquee-track,
+.announcement-marquee-track:hover,
+.announcement-marquee-track:focus,
+.announcement-marquee-track:active,
+.announcement-marquee-group:hover .announcement-marquee-track,
+.announcement-item:hover,
+.announcement-phone-link:hover,
+.announcement-phone-link:focus,
+.announcement-phone-link:active {
+  animation-play-state: running !important;
 }
 
 .announcement-marquee-group {
