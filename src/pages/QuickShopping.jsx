@@ -127,17 +127,9 @@ const QuickShopping = () => {
               )}
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Gold Stripe Ribbon under Header */}
-      <GoldStripeRibbon />
-
-      {/* Main Shopping Section */}
-      <section className="section shopping-main-section">
-        <div className="container">
-          {/* Filter & Sort Bar */}
-          <div className="controls-bar gold-stripe-top">
+          {/* Filter & Sort Bar (All Categories) */}
+          <div className="controls-bar">
             {/* Category Filter Pills */}
             <div className="category-pills-row">
               <button
@@ -174,7 +166,15 @@ const QuickShopping = () => {
               </select>
             </div>
           </div>
+        </div>
+      </section>
 
+      {/* Gold Stripe Ribbon under All Categories */}
+      <GoldStripeRibbon />
+
+      {/* Main Shopping Products Section (Clean White Background below All Categories) */}
+      <section className="section shopping-products-section">
+        <div className="container">
           {/* Active Search / Filter Status */}
           <div className="results-status">
             <span>
@@ -212,7 +212,7 @@ const QuickShopping = () => {
               ))}
             </div>
           ) : (
-            <div className="no-products-state gold-stripe-top">
+            <div className="no-products-state">
               <ShoppingBag size={56} className="no-prod-icon" />
               <h3>No crackers found</h3>
               <p>We could not find any products matching your search criteria. Try a different keyword or reset filters.</p>

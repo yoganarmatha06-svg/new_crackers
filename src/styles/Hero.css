@@ -64,6 +64,26 @@
 
 /* Responsive Banner Settings */
 @media (max-width: 768px) {
+  .navbar-bottom-banner-section {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navbar-banner-link {
+    display: block;
+    width: 100%;
+  }
+
+  .navbar-banner-img {
+    width: 100%;
+    height: auto;
+    /* Increase mobile banner height slightly by 25% while keeping full composition visible */
+    aspect-ratio: 1981 / 991;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+  }
+
   .banner-hover-tag {
     display: none;
   }

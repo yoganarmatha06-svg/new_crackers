@@ -1,6 +1,56 @@
 /* ==========================================================
    NAVBAR STYLES (White Theme with Royal Purple & Gold Accents)
+   FIXED NAVBAR (Mobile & Website / Desktop Views)
    ========================================================== */
+
+.navbar-fixed-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-fixed-wrapper .announcement-bar {
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  max-height: 52px;
+  opacity: 1;
+}
+
+.navbar-fixed-wrapper .gold-stripe-ribbon {
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  max-height: 5px;
+  opacity: 1;
+}
+
+.navbar-fixed-wrapper.scrolled .announcement-bar {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+
+.navbar-fixed-wrapper.scrolled .gold-stripe-ribbon {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* Spacer ensuring page content starts directly below fixed navbar without overlapping */
+.navbar-spacer {
+  height: 130px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .navbar-fixed-wrapper .announcement-bar {
+    max-height: 48px;
+  }
+  .navbar-spacer {
+    height: 118px;
+  }
+}
 
 /* Announcement Bar - Deep Royal Purple & Gold Infinite Marquee */
 .announcement-bar {
@@ -130,9 +180,7 @@
 
 /* Main Navbar (White Background with Purple & Gold Accents) */
 .navbar-header {
-  position: sticky;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
   z-index: 1000;
   background: #ffffff;

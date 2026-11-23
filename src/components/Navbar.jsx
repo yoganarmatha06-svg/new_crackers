@@ -87,8 +87,9 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Top Announcement Bar - Seamless Infinite Marquee */}
-      <div className="announcement-bar no-print" aria-label="Announcement marquee">
+      <div className={`navbar-fixed-wrapper no-print ${isScrolled ? 'scrolled' : ''}`}>
+        {/* Top Announcement Bar - Seamless Infinite Marquee */}
+        <div className="announcement-bar" aria-label="Announcement marquee">
         <div className="announcement-marquee-wrapper">
           <div className="announcement-marquee-track">
             {/* Primary Track Content */}
@@ -383,8 +384,12 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-    </>
-  );
+    </div>
+
+    {/* Spacer ensuring page content starts directly below fixed navbar */}
+    <div className="navbar-spacer no-print" aria-hidden="true"></div>
+  </>
+);
 };
 
 export default Navbar;
